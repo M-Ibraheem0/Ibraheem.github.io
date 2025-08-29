@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Projects Portfolio | Professional Analytics Solutions</title>
+    <meta name="description"
+        content="Comprehensive portfolio of 8 advanced data science projects showcasing data cleaning, machine learning, predictive analytics, and business intelligence solutions with measurable ROI.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .projects-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projects-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .projects-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .projects-hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .projects-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            padding: 80px 0;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color), #1e40af);
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .project-category {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .before-after {
+            margin-bottom: 2rem;
+        }
+
+        .before-after h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .before,
+        .after {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .before {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .after {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .before h5,
+        .after h5 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .before h5 {
+            color: #dc2626;
+        }
+
+        .after h5 {
+            color: #16a34a;
+        }
+
+        .metric {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .tech-stack {
+            margin-bottom: 2rem;
+        }
+
+        .tech-stack h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-project {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .roi-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #fbbf24;
+            color: #92400e;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .projects-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">DataPro Analytics</span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link active">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="case-studies/ecommerce-marketplace.html" class="nav-link">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Projects Hero Section -->
+    <section class="projects-hero">
+        <div class="container">
+            <h1>Data Science Portfolio</h1>
+            <p>Comprehensive showcase of 8 advanced data science projects delivering measurable business impact through
+                cutting-edge analytics, machine learning, and strategic intelligence solutions.</p>
+
+            <div class="projects-stats">
+                <div class="stat-card">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Complete Projects</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">$50M+</span>
+                    <span class="stat-label">Business Impact</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">500K+</span>
+                    <span class="stat-label">Records Processed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">95%+</span>
+                    <span class="stat-label">ML Accuracy</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="projects-grid">
+
+                <!-- Project 1A: E-commerce Data Cleanup -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="roi-badge">905% ROI</div>
+                        <div class="project-category">Data Foundation</div>
+                        <h3 class="project-title">E-commerce Sales Data Cleanup</h3>
+                        <p class="project-description">Advanced data quality engineering for 105K+ sales records across
+                            multiple platforms with ML-powered validation and standardization.</p>
+                    </div>
+                    <div class="project-content">
+                        <div class="before-after">
+                            <h4>🔄 Transformation Results</h4>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Before</h5>
+                                    <div class="metric">67%</div>
+                                    <div class="metric-label">Data Quality Score</div>
+                                </div>
+                                <div class="after">
+                                    <h5>After</h5>
+                                    <div class="metric">100%</div>
+                                    <div class="metric-label">Data Quality Score</div>
+                                </div>
+                            </div>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Issues</h5>
+                                    <div class="metric">15K+</div>
+                                    <div class="metric-label">Data Inconsistencies</div>
+                                </div>
+                                <div class="after">
+                                    <h5>Resolved</h5>
+                                    <div class="metric">0</div>
+                                    <div class="metric-label">Outstanding Issues</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <h4>🛠️ Technology Stack</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">Fuzzy Logic</span>
+                                <span class="tech-tag">Random Forest</span>
+                                <span class="tech-tag">Isolation Forest</span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="projects/project-1a.html" class="btn-project btn-primary">View Details</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 1B: Restaurant Inventory -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="roi-badge">450% ROI</div>
+                        <div class="project-category">Data Engineering</div>
+                        <h3 class="project-title">Restaurant Chain Inventory System</h3>
+                        <p class="project-description">Comprehensive data standardization pipeline for 100K inventory
+                            records across 15 restaurant locations with automated quality validation.</p>
+                    </div>
+                    <div class="project-content">
+                        <div class="before-after">
+                            <h4>🔄 Transformation Results</h4>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Before</h5>
+                                    <div class="metric">11</div>
+                                    <div class="metric-label">Different Units</div>
+                                </div>
+                                <div class="after">
+                                    <h5>After</h5>
+                                    <div class="metric">100%</div>
+                                    <div class="metric-label">Metric Standard</div>
+                                </div>
+                            </div>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Vendors</h5>
+                                    <div class="metric">33</div>
+                                    <div class="metric-label">Name Variations</div>
+                                </div>
+                                <div class="after">
+                                    <h5>Standardized</h5>
+                                    <div class="metric">6</div>
+                                    <div class="metric-label">Unique Vendors</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <h4>🛠️ Technology Stack</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">FuzzyWuzzy</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Data Validation</span>
+                                <span class="tech-tag">ETL Pipeline</span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="projects/project-1b.html" class="btn-project btn-primary">View Details</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 1C: HR Payroll Migration -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="roi-badge">905% ROI</div>
+                        <div class="project-category">System Migration</div>
+                        <h3 class="project-title">HR Payroll System Migration</h3>
+                        <p class="project-description">Legacy system migration for 100K employee records with GDPR
+                            compliance, currency standardization, and risk analysis.</p>
+                    </div>
+                    <div class="project-content">
+                        <div class="before-after">
+                            <h4>🔄 Transformation Results</h4>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Before</h5>
+                                    <div class="metric">7</div>
+                                    <div class="metric-label">Legacy Systems</div>
+                                </div>
+                                <div class="after">
+                                    <h5>After</h5>
+                                    <div class="metric">1</div>
+                                    <div class="metric-label">Unified Platform</div>
+                                </div>
+                            </div>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Manual Work</h5>
+                                    <div class="metric">200h</div>
+                                    <div class="metric-label">Monthly Hours</div>
+                                </div>
+                                <div class="after">
+                                    <h5>Automated</h5>
+                                    <div class="metric">0h</div>
+                                    <div class="metric-label">Manual Work</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <h4>🛠️ Technology Stack</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Data Migration</span>
+                                <span class="tech-tag">GDPR Compliance</span>
+                                <span class="tech-tag">Risk Analysis</span>
+                                <span class="tech-tag">Currency Conversion</span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="projects/project-1c.html" class="btn-project btn-primary">View Details</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2A: Loan Data Quality -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="roi-badge">320% ROI</div>
+                        <div class="project-category">Machine Learning</div>
+                        <h3 class="project-title">Loan Data Quality Management</h3>
+                        <p class="project-description">ML-powered validation system for 50K loan applications with
+                            anomaly detection, income prediction, and real-time monitoring.</p>
+                    </div>
+                    <div class="project-content">
+                        <div class="before-after">
+                            <h4>🔄 Transformation Results</h4>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Before</h5>
+                                    <div class="metric">72%</div>
+                                    <div class="metric-label">Data Accuracy</div>
+                                </div>
+                                <div class="after">
+                                    <h5>After</h5>
+                                    <div class="metric">95%+</div>
+                                    <div class="metric-label">ML Accuracy</div>
+                                </div>
+                            </div>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Manual Review</h5>
+                                    <div class="metric">100%</div>
+                                    <div class="metric-label">Applications</div>
+                                </div>
+                                <div class="after">
+                                    <h5>Automated</h5>
+                                    <div class="metric">85%</div>
+                                    <div class="metric-label">Auto-Processed</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <h4>🛠️ Technology Stack</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">Isolation Forest</span>
+                                <span class="tech-tag">Dash</span>
+                                <span class="tech-tag">Real-time Analytics</span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="projects/project-2a.html" class="btn-project btn-primary">View Details</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2B: Manufacturing Analytics -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="roi-badge">710% ROI</div>
+                        <div class="project-category">Predictive Analytics</div>
+                        <h3 class="project-title">Manufacturing Analytics Platform</h3>
+                        <p class="project-description">Advanced predictive maintenance and quality optimization system
+                            processing 4.38M sensor readings from 500+ machines.</p>
+                    </div>
+                    <div class="project-content">
+                        <div class="before-after">
+                            <h4>🔄 Transformation Results</h4>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Before</h5>
+                                    <div class="metric">40%</div>
+                                    <div class="metric-label">Maintenance Costs</div>
+                                </div>
+                                <div class="after">
+                                    <h5>After</h5>
+                                    <div class="metric">25%</div>
+                                    <div class="metric-label">Cost Reduction</div>
+                                </div>
+                            </div>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Reactive</h5>
+                                    <div class="metric">100%</div>
+                                    <div class="metric-label">Maintenance</div>
+                                </div>
+                                <div class="after">
+                                    <h5>Predictive</h5>
+                                    <div class="metric">86.7%</div>
+                                    <div class="metric-label">Accuracy Score</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <h4>🛠️ Technology Stack</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Anomaly Detection</span>
+                                <span class="tech-tag">Real-time Processing</span>
+                                <span class="tech-tag">IoT Analytics</span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="projects/project-2b.html" class="btn-project btn-primary">View Details</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2C: Healthcare Integration -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="roi-badge">280% ROI</div>
+                        <div class="project-category">Healthcare Analytics</div>
+                        <h3 class="project-title">Healthcare Data Integration</h3>
+                        <p class="project-description">HIPAA-compliant patient data integration across 5 EMR systems
+                            with ML-powered patient matching and medical code standardization.</p>
+                    </div>
+                    <div class="project-content">
+                        <div class="before-after">
+                            <h4>🔄 Transformation Results</h4>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Before</h5>
+                                    <div class="metric">5</div>
+                                    <div class="metric-label">Separate EMR Systems</div>
+                                </div>
+                                <div class="after">
+                                    <h5>After</h5>
+                                    <div class="metric">97.2%</div>
+                                    <div class="metric-label">Patient Match Accuracy</div>
+                                </div>
+                            </div>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Medication Errors</h5>
+                                    <div class="metric">15%</div>
+                                    <div class="metric-label">Error Rate</div>
+                                </div>
+                                <div class="after">
+                                    <h5>Standardized</h5>
+                                    <div class="metric">98.7%</div>
+                                    <div class="metric-label">Drug ID Accuracy</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <h4>🛠️ Technology Stack</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">NLP</span>
+                                <span class="tech-tag">HIPAA Compliance</span>
+                                <span class="tech-tag">Fuzzy Matching</span>
+                                <span class="tech-tag">Medical Coding</span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="projects/project-2c.html" class="btn-project btn-primary">View Details</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3A: Retail Analytics -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="roi-badge">420% ROI</div>
+                        <div class="project-category">Business Intelligence</div>
+                        <h3 class="project-title">Retail Chain Analytics Platform</h3>
+                        <p class="project-description">Comprehensive analytics platform for 200-store retail chain with
+                            customer segmentation, inventory optimization, and expansion analysis.</p>
+                    </div>
+                    <div class="project-content">
+                        <div class="before-after">
+                            <h4>🔄 Transformation Results</h4>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Before</h5>
+                                    <div class="metric">$63M</div>
+                                    <div class="metric-label">Annual Costs</div>
+                                </div>
+                                <div class="after">
+                                    <h5>After</h5>
+                                    <div class="metric">$78M</div>
+                                    <div class="metric-label">Growth Opportunities</div>
+                                </div>
+                            </div>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Manual Analysis</h5>
+                                    <div class="metric">100%</div>
+                                    <div class="metric-label">Store Decisions</div>
+                                </div>
+                                <div class="after">
+                                    <h5>Data-Driven</h5>
+                                    <div class="metric">95%</div>
+                                    <div class="metric-label">Automated Insights</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <h4>🛠️ Technology Stack</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Customer Analytics</span>
+                                <span class="tech-tag">RFM Analysis</span>
+                                <span class="tech-tag">Inventory Optimization</span>
+                                <span class="tech-tag">Market Analysis</span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="projects/project-3a.html" class="btn-project btn-primary">View Details</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3B: SaaS Analytics -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="roi-badge">737% ROI</div>
+                        <div class="project-category">SaaS Analytics</div>
+                        <h3 class="project-title">SaaS Business Intelligence Platform</h3>
+                        <p class="project-description">Advanced SaaS analytics with 99.6% AUC churn prediction, customer
+                            lifetime value modeling, and $33.2M ARR growth projections.</p>
+                    </div>
+                    <div class="project-content">
+                        <div class="before-after">
+                            <h4>🔄 Transformation Results</h4>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Before</h5>
+                                    <div class="metric">$5.06M</div>
+                                    <div class="metric-label">Current ARR</div>
+                                </div>
+                                <div class="after">
+                                    <h5>After</h5>
+                                    <div class="metric">$33.2M</div>
+                                    <div class="metric-label">Projected ARR</div>
+                                </div>
+                            </div>
+                            <div class="comparison-grid">
+                                <div class="before">
+                                    <h5>Reactive Churn</h5>
+                                    <div class="metric">$11.5M</div>
+                                    <div class="metric-label">Revenue at Risk</div>
+                                </div>
+                                <div class="after">
+                                    <h5>Predictive</h5>
+                                    <div class="metric">99.6%</div>
+                                    <div class="metric-label">AUC Accuracy</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <h4>🛠️ Technology Stack</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Churn Prediction</span>
+                                <span class="tech-tag">LTV Modeling</span>
+                                <span class="tech-tag">Cohort Analysis</span>
+                                <span class="tech-tag">Revenue Forecasting</span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="projects/project-3b.html" class="btn-project btn-primary">View Details</a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataPro Analytics</h3>
+                    <p>Transforming businesses through advanced data science and analytics solutions.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#foundation">Data Foundation</a></li>
+                        <li><a href="services.html#ml-enhancement">ML Enhancement</a></li>
+                        <li><a href="services.html#strategic-bi">Strategic BI</a></li>
+                        <li><a href="services.html#transformation">Complete Transformation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Projects</h4>
+                    <ul>
+                        <li><a href="projects.html">All Projects</a></li>
+                        <li><a href="case-studies/ecommerce-marketplace.html">Case Studies</a></li>
+                        <li><a href="case-studies/regional-bank.html">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: ibraheemraouf685@gmail.com.com</p>
+                    <p>Phone: +92 315 3387878</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 DataPro Analytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

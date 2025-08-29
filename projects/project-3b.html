@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3B: SaaS Analytics & Customer Intelligence Platform | DataPro Analytics</title>
+    <meta name="description"
+        content="SaaS Analytics Platform addressing $8.2M churn risk through advanced customer intelligence and predictive analytics for subscription businesses.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-detail-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-detail-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .project-content {
+            padding: 80px 0;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .challenge-card {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .challenge-card h4 {
+            color: #dc2626;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .solution-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .solution-card h4 {
+            color: #16a34a;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .tech-details {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-category {
+            margin-bottom: 2rem;
+        }
+
+        .tech-category h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .results-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .before-results,
+        .after-results {
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .before-results {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .after-results {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .before-results h3 {
+            color: #dc2626;
+            margin-bottom: 1.5rem;
+        }
+
+        .after-results h3 {
+            color: #16a34a;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-item {
+            margin-bottom: 1rem;
+        }
+
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .result-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: #1e40af;
+            transform: translateX(-4px);
+        }
+
+        .demo-section {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .demo-button {
+            background: #10b981;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-button:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .saas-highlight {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .saas-highlight h4 {
+            color: #0369a1;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .results-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">DataPro Analytics</span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../services.html" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../case-studies/ecommerce-marketplace.html" class="nav-link">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Project Detail Hero -->
+    <section class="project-detail-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / SaaS Analytics Platform
+            </div>
+            <h1 class="project-title">SaaS Analytics & Customer Intelligence Platform</h1>
+            <p class="project-subtitle">Advanced customer intelligence platform addressing $8.2M churn risk through
+                predictive analytics and behavioral insights</p>
+
+            <div class="project-metrics">
+                <div class="metric-card">
+                    <span class="metric-value">$8.2M</span>
+                    <span class="metric-label">Churn Risk Mitigated</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">89%</span>
+                    <span class="metric-label">Churn Prediction Accuracy</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">34%</span>
+                    <span class="metric-label">Customer Retention Improvement</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">Real-time</span>
+                    <span class="metric-label">Customer Intelligence</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+            <a href="../projects.html" class="back-button">
+                ← Back to Projects
+            </a>
+
+            <!-- Project Overview -->
+            <div class="content-section">
+                <h2 class="section-title">🎯 Project Overview</h2>
+                <p>This comprehensive SaaS analytics platform was developed to address critical customer retention
+                    challenges facing subscription-based businesses. With $8.2 million in annual churn risk identified,
+                    the solution leverages advanced machine learning and behavioral analytics to predict customer churn,
+                    optimize retention strategies, and maximize customer lifetime value through data-driven insights.
+                </p>
+            </div>
+
+            <!-- SaaS Excellence Highlight -->
+            <div class="content-section">
+                <div class="saas-highlight">
+                    <h4>🚀 SaaS Intelligence Revolution</h4>
+                    <p>This project represents a paradigm shift in SaaS customer management, combining predictive
+                        analytics, behavioral intelligence, and real-time monitoring to create a comprehensive customer
+                        success platform. The solution enables proactive retention strategies and data-driven growth
+                        optimization for subscription businesses.</p>
+                </div>
+            </div>
+
+            <!-- Business Challenges -->
+            <div class="content-section">
+                <h2 class="section-title">⚠️ Business Challenges</h2>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h4>📉 High Customer Churn</h4>
+                        <p>Significant customer attrition rates threatening $8.2M in annual recurring revenue with
+                            limited visibility into churn drivers.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>🔍 Limited Customer Insights</h4>
+                        <p>Lack of comprehensive customer behavior analytics preventing proactive retention and growth
+                            strategies.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>⏰ Reactive Retention</h4>
+                        <p>Customer success teams operating reactively without predictive insights or early warning
+                            systems for at-risk accounts.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>💰 Revenue Predictability</h4>
+                        <p>Difficulty in forecasting revenue and growth due to unpredictable customer behavior and
+                            retention patterns.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>📊 Data Fragmentation</h4>
+                        <p>Customer data scattered across multiple systems preventing holistic view of customer journey
+                            and health.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>🎯 Ineffective Targeting</h4>
+                        <p>Generic retention strategies without personalized approaches based on customer segments and
+                            behavior patterns.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Solutions -->
+            <div class="content-section">
+                <h2 class="section-title">🛠️ Technical Solutions</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>🤖 Predictive Churn Analytics</h4>
+                        <p>Advanced machine learning models achieving 89% accuracy in predicting customer churn with
+                            90-day forecasting horizon.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📊 Customer Health Scoring</h4>
+                        <p>Real-time customer health scoring system combining usage patterns, engagement metrics, and
+                            behavioral indicators.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🎯 Behavioral Segmentation</h4>
+                        <p>Dynamic customer segmentation based on usage patterns, feature adoption, and engagement
+                            levels for targeted strategies.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📈 Revenue Intelligence</h4>
+                        <p>Comprehensive revenue analytics with expansion opportunity identification and lifetime value
+                            optimization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Demo Section -->
+            <div class="content-section">
+                <h2 class="section-title">🚀 Live Demo</h2>
+                <div class="demo-section">
+                    <h4>Interactive SaaS Analytics Platform</h4>
+                    <p>Experience the comprehensive customer intelligence and churn prediction capabilities:</p>
+                    <button class="demo-button" onclick="runDemo('churn-prediction')">Churn Prediction Engine</button>
+                    <button class="demo-button" onclick="runDemo('customer-health')">Customer Health Scoring</button>
+                    <button class="demo-button" onclick="runDemo('behavioral-analytics')">Behavioral Analytics</button>
+                    <button class="demo-button" onclick="runDemo('revenue-intelligence')">Revenue Intelligence</button>
+                    <div id="demo-output"
+                        style="margin-top: 2rem; padding: 1rem; background: white; border-radius: 8px; min-height: 100px; border: 1px solid #e5e7eb;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="content-section">
+                <h2 class="section-title">💻 Technology Stack</h2>
+                <div class="tech-details">
+                    <div class="tech-category">
+                        <h4>Machine Learning & AI</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Python 3.9+</span>
+                            <span class="tech-item">Scikit-learn</span>
+                            <span class="tech-item">TensorFlow</span>
+                            <span class="tech-item">XGBoost</span>
+                            <span class="tech-item">Random Forest</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Data Processing & Analytics</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Pandas</span>
+                            <span class="tech-item">NumPy</span>
+                            <span class="tech-item">Apache Spark</span>
+                            <span class="tech-item">Apache Kafka</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Visualization & BI</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Tableau</span>
+                            <span class="tech-item">Power BI</span>
+                            <span class="tech-item">D3.js</span>
+                            <span class="tech-item">Plotly</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Cloud & Infrastructure</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">AWS</span>
+                            <span class="tech-item">Docker</span>
+                            <span class="tech-item">Kubernetes</span>
+                            <span class="tech-item">PostgreSQL</span>
+                            <span class="tech-item">Redis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Comparison -->
+            <div class="content-section">
+                <h2 class="section-title">📊 Before vs After Results</h2>
+                <div class="results-comparison">
+                    <div class="before-results">
+                        <h3>❌ Before Implementation</h3>
+                        <div class="result-item">
+                            <span class="result-value">$8.2M</span>
+                            <span class="result-description">Annual Churn Risk</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Reactive</span>
+                            <span class="result-description">Customer Success</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Limited</span>
+                            <span class="result-description">Customer Insights</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Generic</span>
+                            <span class="result-description">Retention Strategies</span>
+                        </div>
+                    </div>
+                    <div class="after-results">
+                        <h3>✅ After Implementation</h3>
+                        <div class="result-item">
+                            <span class="result-value">89%</span>
+                            <span class="result-description">Churn Prediction Accuracy</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">34%</span>
+                            <span class="result-description">Retention Improvement</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Real-time</span>
+                            <span class="result-description">Customer Intelligence</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Personalized</span>
+                            <span class="result-description">Targeted Strategies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Impact -->
+            <div class="content-section">
+                <h2 class="section-title">💼 Business Impact</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>💰 Revenue Protection</h4>
+                        <p><strong>$8.2M churn risk mitigated</strong> through predictive analytics and proactive
+                            retention strategies.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📈 Customer Retention</h4>
+                        <p><strong>34% improvement in retention</strong> achieved through personalized customer success
+                            interventions.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🎯 Predictive Accuracy</h4>
+                        <p><strong>89% churn prediction accuracy</strong> enabling proactive customer success and
+                            retention strategies.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🚀 Business Growth</h4>
+                        <p><strong>Real-time customer intelligence</strong> driving data-driven growth and expansion
+                            strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataPro Analytics</h3>
+                    <p>Transforming businesses through advanced data science and analytics solutions.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html#foundation">Data Foundation</a></li>
+                        <li><a href="../services.html#ml-enhancement">ML Enhancement</a></li>
+                        <li><a href="../services.html#strategic-bi">Strategic BI</a></li>
+                        <li><a href="../services.html#transformation">Complete Transformation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Projects</h4>
+                    <ul>
+                        <li><a href="../projects.html">All Projects</a></li>
+                        <li><a href="../case-studies/ecommerce-marketplace.html">Case Studies</a></li>
+                        <li><a href="../case-studies/regional-bank.html">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: ibraheemraouf685@gmail.com.com</p>
+                    <p>Phone: +92 315 3387878</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 DataPro Analytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function runDemo(demoType) {
+            const output = document.getElementById('demo-output');
+
+            switch (demoType) {
+                case 'churn-prediction':
+                    output.innerHTML = `
+                        <h5>🤖 Churn Prediction Engine Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>High-Risk Customers (Next 30 Days):</strong>
+                                <div style="margin-top: 1rem;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: #fef2f2; border-radius: 8px; margin-bottom: 0.5rem;">
+                                        <span><strong>TechCorp Inc.</strong> - Enterprise Plan</span>
+                                        <span style="color: #dc2626; font-weight: bold;">92% Churn Risk</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: #fef2f2; border-radius: 8px; margin-bottom: 0.5rem;">
+                                        <span><strong>StartupXYZ</strong> - Pro Plan</span>
+                                        <span style="color: #dc2626; font-weight: bold;">87% Churn Risk</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: #fef3cd; border-radius: 8px; margin-bottom: 0.5rem;">
+                                        <span><strong>GrowthCo</strong> - Business Plan</span>
+                                        <span style="color: #f59e0b; font-weight: bold;">73% Churn Risk</span>
+                                    </div>
+                                </div>
+                                <div style="background: #f0f9ff; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                                    <strong>🎯 Risk Factors Identified:</strong><br>
+                                    • Declining usage patterns (45% decrease)<br>
+                                    • Reduced feature adoption (3 features unused)<br>
+                                    • Support ticket increase (67% more tickets)<br>
+                                    • Payment delays (2 late payments)
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.2rem; font-weight: bold; color: #16a34a;">89%</div>
+                                        <div style="font-size: 0.8rem;">Prediction Accuracy</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.2rem; font-weight: bold; color: #16a34a;">90 Days</div>
+                                        <div style="font-size: 0.8rem;">Forecast Horizon</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.2rem; font-weight: bold; color: #16a34a;">247</div>
+                                        <div style="font-size: 0.8rem;">Customers Analyzed</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #16a34a; font-weight: 600;">✅ Early intervention strategies deployed for 23 high-risk accounts</p>
+                    `;
+                    break;
+                case 'customer-health':
+                    output.innerHTML = `
+                        <h5>📊 Customer Health Scoring Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>Real-time Customer Health Dashboard:</strong>
+                                <div style="margin-top: 1rem;">
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Healthy Customers (Score 80-100)</span>
+                                            <span style="font-weight: bold; color: #16a34a;">67% (165 customers)</span>
+                                        </div>
+                                        <div style="background: #e5e7eb; border-radius: 10px; height: 8px;">
+                                            <div style="background: #16a34a; height: 8px; border-radius: 10px; width: 67%;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>At-Risk Customers (Score 50-79)</span>
+                                            <span style="font-weight: bold; color: #f59e0b;">23% (57 customers)</span>
+                                        </div>
+                                        <div style="background: #e5e7eb; border-radius: 10px; height: 8px;">
+                                            <div style="background: #f59e0b; height: 8px; border-radius: 10px; width: 23%;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Critical Customers (Score <50)</span>
+                                            <span style="font-weight: bold; color: #dc2626;">10% (25 customers)</span>
+                                        </div>
+                                        <div style="background: #e5e7eb; border-radius: 10px; height: 8px;">
+                                            <div style="background: #dc2626; height: 8px; border-radius: 10px; width: 10%;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="background: #f0f9ff; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                                        <strong>📈 Health Score Components:</strong><br>
+                                        • Product Usage (40% weight): Login frequency, feature adoption<br>
+                                        • Engagement (25% weight): Support interactions, training completion<br>
+                                        • Business Value (20% weight): ROI metrics, goal achievement<br>
+                                        • Relationship (15% weight): NPS scores, feedback sentiment
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #16a34a; font-weight: 600;">✅ Real-time health monitoring for 247 active customers</p>
+                    `;
+                    break;
+                case 'behavioral-analytics':
+                    output.innerHTML = `
+                        <h5>🎯 Behavioral Analytics Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>Customer Behavior Segmentation:</strong>
+                                <div style="margin-top: 1rem;">
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                                        <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px; text-align: center;">
+                                            <div style="font-size: 1.2rem; font-weight: bold; color: #16a34a;">Power Users</div>
+                                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">28% of customers</div>
+                                            <div style="font-size: 0.8rem; color: #16a34a;">High engagement, all features</div>
+                                        </div>
+                                        <div style="background: #f0f9ff; padding: 1rem; border-radius: 8px; text-align: center;">
+                                            <div style="font-size: 1.2rem; font-weight: bold; color: #3b82f6;">Regular Users</div>
+                                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">45% of customers</div>
+                                            <div style="font-size: 0.8rem; color: #3b82f6;">Consistent usage, core features</div>
+                                        </div>
+                                        <div style="background: #fef3cd; padding: 1rem; border-radius: 8px; text-align: center;">
+                                            <div style="font-size: 1.2rem; font-weight: bold; color: #f59e0b;">Casual Users</div>
+                                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">19% of customers</div>
+                                            <div style="font-size: 0.8rem; color: #f59e0b;">Sporadic usage, basic features</div>
+                                        </div>
+                                        <div style="background: #fef2f2; padding: 1rem; border-radius: 8px; text-align: center;">
+                                            <div style="font-size: 1.2rem; font-weight: bold; color: #dc2626;">Dormant Users</div>
+                                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">8% of customers</div>
+                                            <div style="font-size: 0.8rem; color: #dc2626;">Minimal usage, at-risk</div>
+                                        </div>
+                                    </div>
+                                    <div style="background: #f0f9ff; padding: 1rem; border-radius: 8px;">
+                                        <strong>🔍 Behavioral Insights:</strong><br>
+                                        • Power Users: 3.2x higher lifetime value, 95% retention rate<br>
+                                        • Regular Users: Strong expansion potential, respond to feature training<br>
+                                        • Casual Users: Need onboarding support, value-demonstration required<br>
+                                        • Dormant Users: Immediate intervention needed, high churn risk
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #16a34a; font-weight: 600;">✅ Personalized engagement strategies for each behavioral segment</p>
+                    `;
+                    break;
+                case 'revenue-intelligence':
+                    output.innerHTML = `
+                        <h5>💰 Revenue Intelligence Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>Revenue Analytics Dashboard:</strong>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">$8.2M</div>
+                                        <div style="font-size: 0.9rem;">Churn Risk Mitigated</div>
+                                        <div style="font-size: 0.8rem; color: #16a34a;">Annual savings</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">$2.8M</div>
+                                        <div style="font-size: 0.9rem;">Expansion Revenue</div>
+                                        <div style="font-size: 0.8rem; color: #16a34a;">Identified opportunities</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">$4,200</div>
+                                        <div style="font-size: 0.9rem;">Avg Customer LTV</div>
+                                        <div style="font-size: 0.8rem; color: #16a34a;">+23% improvement</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">34%</div>
+                                        <div style="font-size: 0.9rem;">Retention Rate</div>
+                                        <div style="font-size: 0.8rem; color: #16a34a;">Improvement achieved</div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 1rem; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+                                    <strong>📊 Revenue Optimization Strategies:</strong><br>
+                                    • Upsell Opportunities: $1.2M identified in enterprise upgrades<br>
+                                    • Cross-sell Potential: $890K in add-on features<br>
+                                    • Retention Savings: $6.1M prevented churn<br>
+                                    • Pricing Optimization: $720K additional revenue
+                                </div>
+                                <div style="margin-top: 1rem; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                    <strong>🎯 Next Quarter Forecast:</strong><br>
+                                    • Predicted ARR Growth: +18% ($2.1M increase)<br>
+                                    • Churn Risk: 12 accounts ($1.4M at risk)<br>
+                                    • Expansion Pipeline: 34 opportunities ($3.2M potential)
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #16a34a; font-weight: 600;">✅ Revenue intelligence driving $11M+ in business value</p>
+                    `;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

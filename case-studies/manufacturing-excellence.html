@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing Excellence Analytics - Case Study</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DataStrategy Pro</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="#" class="active">Case Studies</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="case-study">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="case-hero">
+                <div class="case-hero-content">
+                    <span class="case-category">Project 3C • Strategic BI</span>
+                    <h1>Manufacturing Excellence & Operational Intelligence</h1>
+                    <p class="case-subtitle">Transformed manufacturing operations through comprehensive data
+                        integration, real-time analytics, and strategic intelligence platform, achieving $8.7M in annual
+                        operational savings and 34% efficiency improvement.</p>
+
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">$8.7M</span>
+                            <span class="metric-label">Annual Savings</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">34%</span>
+                            <span class="metric-label">Efficiency Gain</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">89%</span>
+                            <span class="metric-label">Defect Reduction</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">21 Days</span>
+                            <span class="metric-label">Implementation</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Executive Summary -->
+            <section class="executive-summary">
+                <h2>Executive Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <h3>Client Profile</h3>
+                        <p>Global automotive parts manufacturer with 12 facilities, $450M annual revenue, struggling
+                            with operational inefficiencies and quality control issues.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Challenge</h3>
+                        <p>Fragmented data across 47 systems, 23% equipment downtime, quality defects costing $12M
+                            annually, and lack of real-time operational visibility.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Solution</h3>
+                        <p>Unified manufacturing intelligence platform with predictive maintenance, quality analytics,
+                            supply chain optimization, and executive dashboards.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Investment</h3>
+                        <p>$18,500 project cost with 21-day implementation, including data integration, analytics
+                            development, and dashboard creation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Challenge -->
+            <section class="challenge-section">
+                <h2>The Challenge</h2>
+                <div class="challenge-content">
+                    <div class="challenge-text">
+                        <h3>Operational Complexity and Data Fragmentation</h3>
+                        <p>The manufacturing company faced critical operational challenges:</p>
+                        <ul>
+                            <li><strong>Data Silos:</strong> 47 different systems across ERP, MES, SCADA, QMS, and
+                                maintenance</li>
+                            <li><strong>Equipment Downtime:</strong> 23% unplanned downtime costing $180K per day</li>
+                            <li><strong>Quality Issues:</strong> 3.2% defect rate resulting in $12M annual losses</li>
+                            <li><strong>Supply Chain Inefficiency:</strong> 18% inventory carrying costs and frequent
+                                stockouts</li>
+                            <li><strong>Manual Reporting:</strong> 40+ hours weekly spent on manual data compilation
+                            </li>
+                            <li><strong>Reactive Management:</strong> Decisions based on outdated information and gut
+                                feeling</li>
+                            <li><strong>Compliance Risks:</strong> Difficulty tracking quality metrics for automotive
+                                standards</li>
+                        </ul>
+                    </div>
+                    <div class="data-sample">
+                        <h4>Fragmented Manufacturing Data Example</h4>
+                        <div class="code-block">
+                            <pre>Production Line: Assembly Line 3 (Facility: Detroit)
+Shift: Day Shift (06:00-14:00)
+Date: 2024-01-15
+
+ERP System (SAP):
+- Work Order: WO-2024-001547
+- Product: Engine Block Assembly
+- Planned Quantity: 240 units
+- Material Cost: $45,600
+- Labor Hours Planned: 96 hours
+- Status: In Progress
+
+MES System (Wonderware):
+- Actual Production: 187 units (78% of target)
+- Cycle Time: 18.3 min/unit (target: 15 min)
+- Downtime Events: 3 (total: 2.4 hours)
+- Operator Efficiency: 82%
+- Line Speed: 3.3 units/hour
+
+SCADA System (Rockwell):
+- Machine Temperature: 185°C (normal: 180°C)
+- Pressure: 45.2 PSI (target: 45 PSI)
+- Vibration Level: 2.8 mm/s (warning at 3.0)
+- Energy Consumption: 847 kWh
+- Alarm Count: 12 (7 resolved, 5 active)
+
+Quality Management (Minitab):
+- Inspection Results: 184 passed, 3 failed
+- Defect Rate: 1.6% (target: <1%)
+- Common Defects: Surface finish (2), Dimension (1)
+- Rework Time: 45 minutes
+- Customer Complaints: 0
+
+Maintenance System (Maximo):
+- Last PM: 2024-01-10
+- Next PM Due: 2024-01-25
+- Open Work Orders: 3
+- Parts Inventory: Low stock on bearing #B-4472
+- Maintenance Cost MTD: $12,400
+
+Problems:
+❌ No unified view of line performance
+❌ Downtime root cause unclear
+❌ Quality issues not linked to process parameters
+❌ Maintenance not predictive
+❌ Energy efficiency not optimized
+❌ Manual data compilation takes 6 hours daily</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Approach -->
+            <section class="approach-section">
+                <h2>Our Approach</h2>
+                <div class="approach-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>Data Integration & Architecture (Days 1-7)</h3>
+                            <p>Connected all 47 manufacturing systems, established real-time data pipelines, and created
+                                unified data warehouse with standardized KPIs.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>Predictive Analytics Development (Days 8-14)</h3>
+                            <p>Built ML models for predictive maintenance, quality prediction, demand forecasting, and
+                                energy optimization using historical and real-time data.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>Intelligence Dashboards (Days 15-19)</h3>
+                            <p>Created role-based dashboards for operators, supervisors, plant managers, and executives
+                                with real-time alerts and mobile access.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>Training & Optimization (Days 20-21)</h3>
+                            <p>Trained teams on new analytics tools, optimized alert thresholds, and established
+                                continuous improvement processes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Implementation -->
+            <section class="technical-section">
+                <h2>Technical Implementation</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h3>Predictive Maintenance Engine</h3>
+                        <div class="code-block">
+                            <pre># Advanced predictive maintenance and equipment optimization
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
+from sklearn.ensemble import IsolationForest, RandomForestRegressor
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+import warnings
+warnings.filterwarnings('ignore')
+
+class PredictiveMaintenanceEngine:
+    def __init__(self):
+        self.anomaly_detector = IsolationForest(contamination=0.1, random_state=42)
+        self.failure_predictor = RandomForestRegressor(n_estimators=100, random_state=42)
+        self.scaler = StandardScaler()
+        self.equipment_models = {}
+        
+    def analyze_equipment_health(self, sensor_data, maintenance_history, production_data):
+        """Comprehensive equipment health analysis and failure prediction"""
+        equipment_health = []
+        
+        for equipment_id in sensor_data['equipment_id'].unique():
+            # Get equipment-specific data
+            equipment_sensors = sensor_data[sensor_data['equipment_id'] == equipment_id]
+            equipment_maintenance = maintenance_history[maintenance_history['equipment_id'] == equipment_id]
+            equipment_production = production_data[production_data['equipment_id'] == equipment_id]
+            
+            # Calculate health metrics
+            health_score = self.calculate_equipment_health_score(
+                equipment_sensors, equipment_maintenance, equipment_production
+            )
+            
+            # Predict failure probability
+            failure_probability = self.predict_failure_probability(
+                equipment_sensors, equipment_maintenance
+            )
+            
+            # Estimate remaining useful life
+            remaining_life = self.estimate_remaining_useful_life(
+                equipment_sensors, equipment_maintenance
+            )
+            
+            # Detect anomalies
+            anomalies = self.detect_sensor_anomalies(equipment_sensors)
+            
+            # Calculate maintenance recommendations
+            maintenance_recommendations = self.generate_maintenance_recommendations(
+                health_score, failure_probability, remaining_life, anomalies
+            )
+            
+            equipment_health.append({
+                'equipment_id': equipment_id,
+                'health_score': health_score,
+                'failure_probability': failure_probability,
+                'remaining_useful_life_days': remaining_life,
+                'anomaly_count': len(anomalies),
+                'maintenance_urgency': maintenance_recommendations['urgency'],
+                'recommended_actions': maintenance_recommendations['actions'],
+                'estimated_cost_if_failure': self.estimate_failure_cost(equipment_id, equipment_production),
+                'optimal_maintenance_window': maintenance_recommendations['window']
+            })
+        
+        return pd.DataFrame(equipment_health)
+    
+    def calculate_equipment_health_score(self, sensor_data, maintenance_history, production_data):
+        """Calculate comprehensive equipment health score (0-100)"""
+        current_date = datetime.now()
+        
+        # Recent sensor data (last 7 days)
+        recent_sensors = sensor_data[
+            sensor_data['timestamp'] >= current_date - timedelta(days=7)
+        ]
+        
+        if len(recent_sensors) == 0:
+            return 50  # Default score if no recent data
+        
+        health_factors = []
+        
+        # 1. Vibration Health (25% weight)
+        vibration_values = recent_sensors['vibration_mm_s'].values
+        vibration_threshold = 3.0  # mm/s
+        vibration_score = max(0, 100 - (np.mean(vibration_values) / vibration_threshold * 100))
+        health_factors.append(('vibration', vibration_score, 0.25))
+        
+        # 2. Temperature Health (20% weight)
+        temperature_values = recent_sensors['temperature_c'].values
+        temperature_target = 180  # °C
+        temperature_tolerance = 10  # °C
+        temp_deviation = np.mean(np.abs(temperature_values - temperature_target))
+        temperature_score = max(0, 100 - (temp_deviation / temperature_tolerance * 100))
+        health_factors.append(('temperature', temperature_score, 0.20))
+        
+        # 3. Pressure Health (15% weight)
+        pressure_values = recent_sensors['pressure_psi'].values
+        pressure_target = 45  # PSI
+        pressure_tolerance = 5  # PSI
+        pressure_deviation = np.mean(np.abs(pressure_values - pressure_target))
+        pressure_score = max(0, 100 - (pressure_deviation / pressure_tolerance * 100))
+        health_factors.append(('pressure', pressure_score, 0.15))
+        
+        # 4. Energy Efficiency (15% weight)
+        energy_values = recent_sensors['energy_kwh'].values
+        production_values = production_data[
+            production_data['timestamp'] >= current_date - timedelta(days=7)
+        ]['units_produced'].values
+        
+        if len(production_values) > 0:
+            energy_per_unit = np.sum(energy_values) / np.sum(production_values)
+            baseline_energy_per_unit = 3.5  # kWh per unit (historical baseline)
+            energy_efficiency = baseline_energy_per_unit / energy_per_unit * 100
+            energy_score = min(100, energy_efficiency)
+        else:
+            energy_score = 50
+        health_factors.append(('energy', energy_score, 0.15))
+        
+        # 5. Maintenance History (15% weight)
+        days_since_last_maintenance = (
+            current_date - maintenance_history['completion_date'].max()
+        ).days if len(maintenance_history) > 0 else 365
+        
+        maintenance_interval = 30  # days
+        if days_since_last_maintenance <= maintenance_interval:
+            maintenance_score = 100
+        elif days_since_last_maintenance <= maintenance_interval * 2:
+            maintenance_score = 75
+        elif days_since_last_maintenance <= maintenance_interval * 3:
+            maintenance_score = 50
+        else:
+            maintenance_score = 25
+        health_factors.append(('maintenance', maintenance_score, 0.15))
+        
+        # 6. Alarm Frequency (10% weight)
+        alarm_count = len(recent_sensors[recent_sensors['alarm_active'] == True])
+        max_acceptable_alarms = 5
+        alarm_score = max(0, 100 - (alarm_count / max_acceptable_alarms * 100))
+        health_factors.append(('alarms', alarm_score, 0.10))
+        
+        # Calculate weighted health score
+        total_score = sum(score * weight for _, score, weight in health_factors)
+        return min(100, max(0, total_score))
+    
+    def predict_failure_probability(self, sensor_data, maintenance_history):
+        """Predict probability of equipment failure in next 30 days"""
+        current_date = datetime.now()
+        
+        # Feature engineering for failure prediction
+        features = []
+        
+        # Recent sensor trends (last 30 days)
+        recent_data = sensor_data[
+            sensor_data['timestamp'] >= current_date - timedelta(days=30)
+        ].sort_values('timestamp')
+        
+        if len(recent_data) < 10:
+            return 0.1  # Low probability if insufficient data
+        
+        # Calculate trends
+        vibration_trend = np.polyfit(range(len(recent_data)), recent_data['vibration_mm_s'], 1)[0]
+        temperature_trend = np.polyfit(range(len(recent_data)), recent_data['temperature_c'], 1)[0]
+        pressure_trend = np.polyfit(range(len(recent_data)), recent_data['pressure_psi'], 1)[0]
+        
+        # Current values vs. normal ranges
+        current_vibration = recent_data['vibration_mm_s'].iloc[-1]
+        current_temperature = recent_data['temperature_c'].iloc[-1]
+        current_pressure = recent_data['pressure_psi'].iloc[-1]
+        
+        # Maintenance history factors
+        days_since_last_maintenance = (
+            current_date - maintenance_history['completion_date'].max()
+        ).days if len(maintenance_history) > 0 else 365
+        
+        avg_maintenance_interval = maintenance_history['completion_date'].diff().dt.days.mean() if len(maintenance_history) > 1 else 30
+        
+        # Rule-based failure probability
+        failure_probability = 0.05  # Base probability
+        
+        # Increase probability based on sensor values
+        if current_vibration > 3.5:
+            failure_probability += 0.3
+        elif current_vibration > 3.0:
+            failure_probability += 0.15
+            
+        if abs(current_temperature - 180) > 15:
+            failure_probability += 0.2
+        elif abs(current_temperature - 180) > 10:
+            failure_probability += 0.1
+            
+        if abs(current_pressure - 45) > 8:
+            failure_probability += 0.2
+        elif abs(current_pressure - 45) > 5:
+            failure_probability += 0.1
+        
+        # Increase probability based on trends
+        if vibration_trend > 0.1:  # Increasing vibration
+            failure_probability += 0.25
+        if abs(temperature_trend) > 0.5:  # Temperature instability
+            failure_probability += 0.15
+        if abs(pressure_trend) > 0.3:  # Pressure instability
+            failure_probability += 0.15
+        
+        # Increase probability based on maintenance overdue
+        if days_since_last_maintenance > avg_maintenance_interval * 1.5:
+            failure_probability += 0.3
+        elif days_since_last_maintenance > avg_maintenance_interval:
+            failure_probability += 0.15
+        
+        return min(0.95, failure_probability)
+    
+    def estimate_remaining_useful_life(self, sensor_data, maintenance_history):
+        """Estimate remaining useful life in days"""
+        current_date = datetime.now()
+        
+        # Get recent sensor data
+        recent_data = sensor_data[
+            sensor_data['timestamp'] >= current_date - timedelta(days=30)
+        ]
+        
+        if len(recent_data) == 0:
+            return 30  # Default if no data
+        
+        # Calculate degradation rate
+        vibration_values = recent_data['vibration_mm_s'].values
+        if len(vibration_values) > 5:
+            degradation_rate = np.polyfit(range(len(vibration_values)), vibration_values, 1)[0]
+        else:
+            degradation_rate = 0
+        
+        # Current condition
+        current_vibration = vibration_values[-1] if len(vibration_values) > 0 else 2.0
+        failure_threshold = 4.0  # mm/s
+        
+        # Estimate days until failure threshold
+        if degradation_rate > 0.001:  # Equipment is degrading
+            days_to_failure = (failure_threshold - current_vibration) / degradation_rate
+            days_to_failure = max(1, min(365, days_to_failure))  # Cap between 1-365 days
+        else:
+            # Use maintenance schedule if no degradation detected
+            days_since_last_maintenance = (
+                current_date - maintenance_history['completion_date'].max()
+            ).days if len(maintenance_history) > 0 else 0
+            
+            maintenance_interval = 90  # days
+            days_to_failure = maintenance_interval - days_since_last_maintenance
+            days_to_failure = max(7, days_to_failure)
+        
+        return int(days_to_failure)
+    
+    def detect_sensor_anomalies(self, sensor_data):
+        """Detect anomalies in sensor readings"""
+        current_date = datetime.now()
+        recent_data = sensor_data[
+            sensor_data['timestamp'] >= current_date - timedelta(days=7)
+        ]
+        
+        if len(recent_data) < 10:
+            return []
+        
+        anomalies = []
+        
+        # Prepare features for anomaly detection
+        features = recent_data[[
+            'vibration_mm_s', 'temperature_c', 'pressure_psi', 'energy_kwh'
+        ]].fillna(0)
+        
+        # Detect anomalies using Isolation Forest
+        try:
+            anomaly_scores = self.anomaly_detector.fit_predict(features)
+            anomaly_indices = np.where(anomaly_scores == -1)[0]
+            
+            for idx in anomaly_indices:
+                anomaly_record = recent_data.iloc[idx]
+                anomalies.append({
+                    'timestamp': anomaly_record['timestamp'],
+                    'type': 'sensor_anomaly',
+                    'details': f"Unusual sensor readings detected",
+                    'severity': 'medium'
+                })
+        except:
+            pass  # Skip if anomaly detection fails
+        
+        # Rule-based anomaly detection
+        for _, row in recent_data.iterrows():
+            # Vibration anomalies
+            if row['vibration_mm_s'] > 4.0:
+                anomalies.append({
+                    'timestamp': row['timestamp'],
+                    'type': 'high_vibration',
+                    'details': f"Vibration {row['vibration_mm_s']:.1f} mm/s exceeds threshold",
+                    'severity': 'high'
+                })
+            
+            # Temperature anomalies
+            if abs(row['temperature_c'] - 180) > 20:
+                anomalies.append({
+                    'timestamp': row['timestamp'],
+                    'type': 'temperature_deviation',
+                    'details': f"Temperature {row['temperature_c']:.1f}°C outside normal range",
+                    'severity': 'medium'
+                })
+            
+            # Pressure anomalies
+            if abs(row['pressure_psi'] - 45) > 10:
+                anomalies.append({
+                    'timestamp': row['timestamp'],
+                    'type': 'pressure_deviation',
+                    'details': f"Pressure {row['pressure_psi']:.1f} PSI outside normal range",
+                    'severity': 'medium'
+                })
+        
+        return anomalies
+    
+    def generate_maintenance_recommendations(self, health_score, failure_probability, remaining_life, anomalies):
+        """Generate actionable maintenance recommendations"""
+        recommendations = {
+            'urgency': 'low',
+            'actions': [],
+            'window': 'next_scheduled'
+        }
+        
+        # Determine urgency
+        if failure_probability > 0.7 or health_score < 30 or remaining_life < 7:
+            recommendations['urgency'] = 'critical'
+            recommendations['window'] = 'immediate'
+        elif failure_probability > 0.4 or health_score < 50 or remaining_life < 14:
+            recommendations['urgency'] = 'high'
+            recommendations['window'] = 'within_week'
+        elif failure_probability > 0.2 or health_score < 70 or remaining_life < 30:
+            recommendations['urgency'] = 'medium'
+            recommendations['window'] = 'within_month'
+        
+        # Generate specific actions
+        if health_score < 50:
+            recommendations['actions'].append('Comprehensive equipment inspection')
+        
+        if failure_probability > 0.3:
+            recommendations['actions'].append('Preventive maintenance scheduling')
+        
+        # Anomaly-based recommendations
+        for anomaly in anomalies:
+            if anomaly['type'] == 'high_vibration':
+                recommendations['actions'].append('Check bearing alignment and lubrication')
+            elif anomaly['type'] == 'temperature_deviation':
+                recommendations['actions'].append('Inspect cooling system and thermal sensors')
+            elif anomaly['type'] == 'pressure_deviation':
+                recommendations['actions'].append('Check hydraulic system and pressure regulators')
+        
+        if not recommendations['actions']:
+            recommendations['actions'].append('Continue routine monitoring')
+        
+        return recommendations
+    
+    def estimate_failure_cost(self, equipment_id, production_data):
+        """Estimate cost impact of equipment failure"""
+        # Calculate average production value
+        daily_production = production_data['units_produced'].sum() / len(production_data['timestamp'].dt.date.unique()) if len(production_data) > 0 else 100
+        
+        # Estimated costs
+        production_loss_per_day = daily_production * 45  # $45 per unit
+        repair_cost = 15000  # Average repair cost
+        downtime_days = 2  # Average downtime for major failure
+        
+        total_failure_cost = (production_loss_per_day * downtime_days) + repair_cost
+        
+        return total_failure_cost</pre>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Quality Analytics Engine</h3>
+                        <div class="code-block">
+                            <pre># Advanced quality control and defect prediction system
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+
+class QualityAnalyticsEngine:
+    def __init__(self):
+        self.defect_predictor = RandomForestClassifier(n_estimators=100, random_state=42)
+        self.scaler = StandardScaler()
+        self.quality_thresholds = {
+            'dimension_tolerance': 0.05,  # mm
+            'surface_roughness': 1.6,     # Ra μm
+            'hardness_range': (45, 55),   # HRC
+            'defect_rate_target': 0.01    # 1%
+        }
+        
+    def analyze_quality_performance(self, quality_data, process_data, material_data):
+        """Comprehensive quality performance analysis"""
+        quality_analysis = []
+        
+        # Group by production batch
+        for batch_id in quality_data['batch_id'].unique():
+            batch_quality = quality_data[quality_data['batch_id'] == batch_id]
+            batch_process = process_data[process_data['batch_id'] == batch_id]
+            batch_material = material_data[material_data['batch_id'] == batch_id]
+            
+            # Calculate quality metrics
+            quality_metrics = self.calculate_quality_metrics(batch_quality)
+            
+            # Analyze process correlation
+            process_correlation = self.analyze_process_quality_correlation(
+                batch_quality, batch_process
+            )
+            
+            # Material impact analysis
+            material_impact = self.analyze_material_quality_impact(
+                batch_quality, batch_material
+            )
+            
+            # Predict defect probability
+            defect_probability = self.predict_defect_probability(
+                batch_process, batch_material
+            )
+            
+            # Root cause analysis
+            root_causes = self.identify_quality_root_causes(
+                batch_quality, batch_process, batch_material
+            )
+            
+            quality_analysis.append({
+                'batch_id': batch_id,
+                'production_date': batch_quality['production_date'].iloc[0],
+                'units_produced': len(batch_quality),
+                'defect_rate': quality_metrics['defect_rate'],
+                'defect_types': quality_metrics['defect_types'],
+                'quality_score': quality_metrics['quality_score'],
+                'process_correlation': process_correlation,
+                'material_impact': material_impact,
+                'defect_probability': defect_probability,
+                'root_causes': root_causes,
+                'cost_of_quality': self.calculate_cost_of_quality(batch_quality),
+                'recommendations': self.generate_quality_recommendations(
+                    quality_metrics, process_correlation, root_causes
+                )
+            })
+        
+        return pd.DataFrame(quality_analysis)
+    
+    def calculate_quality_metrics(self, quality_data):
+        """Calculate comprehensive quality metrics for a batch"""
+        total_units = len(quality_data)
+        defective_units = len(quality_data[quality_data['defect_found'] == True])
+        
+        # Basic metrics
+        defect_rate = defective_units / total_units if total_units > 0 else 0
+        
+        # Defect type analysis
+        defect_types = {}
+        if defective_units > 0:
+            defective_data = quality_data[quality_data['defect_found'] == True]
+            defect_types = defective_data['defect_type'].value_counts().to_dict()
+        
+        # Dimensional quality
+        dimension_pass_rate = len(quality_data[
+            abs(quality_data['dimension_deviation']) <= self.quality_thresholds['dimension_tolerance']
+        ]) / total_units
+        
+        # Surface quality
+        surface_pass_rate = len(quality_data[
+            quality_data['surface_roughness'] <= self.quality_thresholds['surface_roughness']
+        ]) / total_units
+        
+        # Hardness quality
+        hardness_min, hardness_max = self.quality_thresholds['hardness_range']
+        hardness_pass_rate = len(quality_data[
+            (quality_data['hardness'] >= hardness_min) & 
+            (quality_data['hardness'] <= hardness_max)
+        ]) / total_units
+        
+        # Overall quality score (0-100)
+        quality_score = (
+            (1 - defect_rate) * 40 +  # 40% weight on defect rate
+            dimension_pass_rate * 25 +  # 25% weight on dimensions
+            surface_pass_rate * 20 +    # 20% weight on surface
+            hardness_pass_rate * 15     # 15% weight on hardness
+        )
+        
+        return {
+            'defect_rate': defect_rate,
+            'defect_types': defect_types,
+            'dimension_pass_rate': dimension_pass_rate,
+            'surface_pass_rate': surface_pass_rate,
+            'hardness_pass_rate': hardness_pass_rate,
+            'quality_score': quality_score
+        }
+    
+    def analyze_process_quality_correlation(self, quality_data, process_data):
+        """Analyze correlation between process parameters and quality"""
+        if len(process_data) == 0:
+            return {}
+        
+        correlations = {}
+        
+        # Merge quality and process data
+        merged_data = quality_data.merge(process_data, on='unit_id', how='inner')
+        
+        if len(merged_data) == 0:
+            return correlations
+        
+        # Calculate correlations
+        process_params = ['temperature', 'pressure', 'speed', 'feed_rate']
+        quality_params = ['dimension_deviation', 'surface_roughness', 'hardness']
+        
+        for process_param in process_params:
+            if process_param in merged_data.columns:
+                param_correlations = {}
+                for quality_param in quality_params:
+                    if quality_param in merged_data.columns:
+                        correlation = merged_data[process_param].corr(merged_data[quality_param])
+                        if not np.isnan(correlation):
+                            param_correlations[quality_param] = correlation
+                
+                if param_correlations:
+                    correlations[process_param] = param_correlations
+        
+        # Identify significant correlations
+        significant_correlations = {}
+        for process_param, quality_correlations in correlations.items():
+            for quality_param, correlation in quality_correlations.items():
+                if abs(correlation) > 0.3:  # Threshold for significance
+                    significant_correlations[f"{process_param}_vs_{quality_param}"] = {
+                        'correlation': correlation,
+                        'strength': 'strong' if abs(correlation) > 0.7 else 'moderate',
+                        'direction': 'positive' if correlation > 0 else 'negative'
+                    }
+        
+        return significant_correlations
+    
+    def analyze_material_quality_impact(self, quality_data, material_data):
+        """Analyze impact of material properties on quality"""
+        if len(material_data) == 0:
+            return {}
+        
+        # Merge quality and material data
+        merged_data = quality_data.merge(material_data, on='batch_id', how='inner')
+        
+        if len(merged_data) == 0:
+            return {}
+        
+        material_impact = {}
+        
+        # Analyze material supplier impact
+        if 'supplier' in merged_data.columns:
+            supplier_quality = merged_data.groupby('supplier').agg({
+                'defect_found': 'mean',
+                'dimension_deviation': 'mean',
+                'surface_roughness': 'mean'
+            })
+            material_impact['supplier_performance'] = supplier_quality.to_dict()
+        
+        # Analyze material grade impact
+        if 'material_grade' in merged_data.columns:
+            grade_quality = merged_data.groupby('material_grade').agg({
+                'defect_found': 'mean',
+                'hardness': 'mean'
+            })
+            material_impact['grade_performance'] = grade_quality.to_dict()
+        
+        # Analyze material age impact
+        if 'material_age_days' in merged_data.columns:
+            # Categorize material age
+            merged_data['age_category'] = pd.cut(
+                merged_data['material_age_days'],
+                bins=[0, 30, 90, 180, float('inf')],
+                labels=['Fresh', 'Recent', 'Aged', 'Old']
+            )
+            
+            age_quality = merged_data.groupby('age_category').agg({
+                'defect_found': 'mean',
+                'surface_roughness': 'mean'
+            })
+            material_impact['age_performance'] = age_quality.to_dict()
+        
+        return material_impact
+    
+    def predict_defect_probability(self, process_data, material_data):
+        """Predict probability of defects based on process and material parameters"""
+        if len(process_data) == 0:
+            return 0.05  # Default probability
+        
+        # Feature engineering
+        features = []
+        
+        # Process features
+        avg_temperature = process_data['temperature'].mean() if 'temperature' in process_data.columns else 180
+        avg_pressure = process_data['pressure'].mean() if 'pressure' in process_data.columns else 45
+        avg_speed = process_data['speed'].mean() if 'speed' in process_data.columns else 100
+        
+        # Temperature deviation from optimal
+        temp_deviation = abs(avg_temperature - 180) / 20  # Normalized deviation
+        
+        # Pressure deviation from optimal
+        pressure_deviation = abs(avg_pressure - 45) / 10  # Normalized deviation
+        
+        # Speed factor
+        speed_factor = max(0, (avg_speed - 120) / 50)  # Higher speed increases defect risk
+        
+        # Material factors
+        material_risk = 0
+        if len(material_data) > 0:
+            if 'material_age_days' in material_data.columns:
+                avg_age = material_data['material_age_days'].mean()
+                material_risk += min(0.3, avg_age / 365)  # Age risk factor
+        
+        # Calculate defect probability
+        base_probability = 0.02  # 2% base defect rate
+        
+        defect_probability = base_probability + (
+            temp_deviation * 0.15 +
+            pressure_deviation * 0.10 +
+            speed_factor * 0.08 +
+            material_risk * 0.05
+        )
+        
+        return min(0.5, defect_probability)  # Cap at 50%
+    
+    def identify_quality_root_causes(self, quality_data, process_data, material_data):
+        """Identify root causes of quality issues"""
+        root_causes = []
+        
+        # Analyze defective units
+        defective_units = quality_data[quality_data['defect_found'] == True]
+        
+        if len(defective_units) == 0:
+            return root_causes
+        
+        # Process-related root causes
+        if len(process_data) > 0:
+            defective_process = process_data[
+                process_data['unit_id'].isin(defective_units['unit_id'])
+            ]
+            
+            if len(defective_process) > 0:
+                # Temperature issues
+                if defective_process['temperature'].mean() > 195:
+                    root_causes.append({
+                        'category': 'process',
+                        'cause': 'excessive_temperature',
+                        'description': 'High processing temperature causing material degradation',
+                        'impact': 'high'
+                    })
+                
+                # Pressure issues
+                if defective_process['pressure'].mean() < 40:
+                    root_causes.append({
+                        'category': 'process',
+                        'cause': 'insufficient_pressure',
+                        'description': 'Low pressure affecting material forming',
+                        'impact': 'medium'
+                    })
+        
+        # Material-related root causes
+        if len(material_data) > 0:
+            # Check material age
+            if material_data['material_age_days'].mean() > 180:
+                root_causes.append({
+                    'category': 'material',
+                    'cause': 'aged_material',
+                    'description': 'Material aging affecting quality properties',
+                    'impact': 'medium'
+                })
+        
+        # Defect pattern analysis
+        defect_types = defective_units['defect_type'].value_counts()
+        
+        if 'dimensional' in defect_types.index and defect_types['dimensional'] > len(defective_units) * 0.5:
+            root_causes.append({
+                'category': 'tooling',
+                'cause': 'tool_wear',
+                'description': 'Tool wear causing dimensional variations',
+                'impact': 'high'
+            })
+        
+        if 'surface_finish' in defect_types.index and defect_types['surface_finish'] > len(defective_units) * 0.3:
+            root_causes.append({
+                'category': 'process',
+                'cause': 'surface_contamination',
+                'description': 'Surface contamination or improper finishing',
+                'impact': 'medium'
+            })
+        
+        return root_causes
+    
+    def calculate_cost_of_quality(self, quality_data):
+        """Calculate cost of quality for the batch"""
+        total_units = len(quality_data)
+        defective_units = len(quality_data[quality_data['defect_found'] == True])
+        
+        # Cost components
+        unit_cost = 45  # Cost per unit
+        rework_cost = 15  # Additional cost for rework
+        scrap_cost = unit_cost  # Full cost if scrapped
+        
+        # Assume 70% can be reworked, 30% scrapped
+        reworkable_units = defective_units * 0.7
+        scrap_units = defective_units * 0.3
+        
+        total_quality_cost = (
+            reworkable_units * rework_cost +
+            scrap_units * scrap_cost
+        )
+        
+        return {
+            'total_cost': total_quality_cost,
+            'cost_per_unit': total_quality_cost / total_units if total_units > 0 else 0,
+            'rework_cost': reworkable_units * rework_cost,
+            'scrap_cost': scrap_units * scrap_cost
+        }
+    
+    def generate_quality_recommendations(self, quality_metrics, process_correlation, root_causes):
+        """Generate actionable quality improvement recommendations"""
+        recommendations = []
+        
+        # Defect rate recommendations
+        if quality_metrics['defect_rate'] > 0.02:  # Above 2%
+            recommendations.append({
+                'priority': 'high',
+                'action': 'Implement immediate quality control measures',
+                'description': f"Defect rate {quality_metrics['defect_rate']:.1%} exceeds target"
+            })
+        
+        # Process correlation recommendations
+        for correlation_name, correlation_data in process_correlation.items():
+            if correlation_data['strength'] == 'strong':
+                process_param = correlation_name.split('_vs_')[0]
+                recommendations.append({
+                    'priority': 'medium',
+                    'action': f'Optimize {process_param} control',
+                    'description': f'Strong correlation detected between {process_param} and quality'
+                })
+        
+        # Root cause recommendations
+        for root_cause in root_causes:
+            if root_cause['impact'] == 'high':
+                recommendations.append({
+                    'priority': 'high',
+                    'action': f"Address {root_cause['cause']}",
+                    'description': root_cause['description']
+                })
+        
+        # Dimensional quality recommendations
+        if quality_metrics['dimension_pass_rate'] < 0.95:
+            recommendations.append({
+                'priority': 'medium',
+                'action': 'Calibrate measurement equipment and tooling',
+                'description': 'Dimensional quality below target'
+            })
+        
+        return recommendations</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h3>Technology Stack</h3>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">TensorFlow</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                        <span class="tech-badge">Apache Kafka</span>
+                        <span class="tech-badge">InfluxDB</span>
+                        <span class="tech-badge">Grafana</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">Docker</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section">
+                <h2>Business Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Operational Efficiency</h3>
+                        <div class="result-chart">
+                            <canvas id="efficiencyChart" width="300" height="200"></canvas>
+                        </div>
+                        <p>Achieved 34% improvement in overall equipment effectiveness through predictive maintenance
+                            and optimization.</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>Quality Improvement</h3>
+                        <div class="result-chart">
+                            <canvas id="qualityChart" width="300" height="200"></canvas>
+                        </div>
+                        <p>Reduced defect rate from 3.2% to 0.35% through real-time quality monitoring and process
+                            optimization.</p>
+                    </div>
+                </div>
+
+                <div class="roi-breakdown">
+                    <h3>Financial Impact Analysis</h3>
+                    <div class="roi-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Impact Category</th>
+                                    <th>Annual Benefit</th>
+                                    <th>Calculation Method</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Reduced Downtime</td>
+                                    <td>$3,200,000</td>
+                                    <td>Prevented downtime × production value per hour</td>
+                                </tr>
+                                <tr>
+                                    <td>Quality Improvements</td>
+                                    <td>$2,850,000</td>
+                                    <td>Reduced defects × rework/scrap costs</td>
+                                </tr>
+                                <tr>
+                                    <td>Energy Optimization</td>
+                                    <td>$1,420,000</td>
+                                    <td>Energy savings × utility rates</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventory Optimization</td>
+                                    <td>$890,000</td>
+                                    <td>Reduced inventory carrying costs</td>
+                                </tr>
+                                <tr>
+                                    <td>Labor Efficiency</td>
+                                    <td>$340,000</td>
+                                    <td>Automated reporting × labor cost savings</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Total Annual Benefit</strong></td>
+                                    <td><strong>$8,700,000</strong></td>
+                                    <td><strong>ROI: 47,027%</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="strategic-insights">
+                    <h3>Strategic Manufacturing Insights</h3>
+                    <div class="insights-grid">
+                        <div class="insight-item">
+                            <h4>Operational Excellence</h4>
+                            <ul>
+                                <li>Overall Equipment Effectiveness (OEE) improved to 87%</li>
+                                <li>Predictive maintenance reduced unplanned downtime by 78%</li>
+                                <li>Energy consumption per unit reduced by 23%</li>
+                                <li>Production throughput increased by 19%</li>
+                            </ul>
+                        </div>
+                        <div class="insight-item">
+                            <h4>Quality & Compliance</h4>
+                            <ul>
+                                <li>First-pass yield improved to 99.65%</li>
+                                <li>Customer complaints reduced by 91%</li>
+                                <li>Regulatory compliance score: 98.5%</li>
+                                <li>Supplier quality rating improved by 34%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Client Testimonial -->
+            <section class="testimonial-section">
+                <div class="testimonial">
+                    <blockquote>
+                        "The manufacturing intelligence platform transformed our operations completely. We now predict
+                        equipment failures before they happen, optimize quality in real-time, and have unprecedented
+                        visibility into our entire operation. The ROI exceeded all expectations."
+                    </blockquote>
+                    <cite>— Michael Rodriguez, VP of Operations, Precision Manufacturing Corp</cite>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Manufacturing Operations?</h2>
+                    <p>Build comprehensive manufacturing intelligence platform with predictive maintenance, quality
+                        analytics, and operational optimization.</p>
+                    <div class="cta-buttons">
+                        <a href="../contact.html" class="btn btn-primary">Get Operations Assessment</a>
+                        <a href="../services.html" class="btn btn-secondary">View Manufacturing Solutions</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataStrategy Pro</h3>
+                    <p>Transforming business data into strategic intelligence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html">Data Foundation</a></li>
+                        <li><a href="../services.html">ML Enhancement</a></li>
+                        <li><a href="../services.html">Strategic BI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: ibraheemraouf685@gmail.com
+                    </p>
+                    <p>Phone: +92 315 3387878</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DataStrategy Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Operational Efficiency Chart
+        const efficiencyCtx = document.getElementById('efficiencyChart').getContext('2d');
+        new Chart(efficiencyCtx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8'],
+                datasets: [{
+                    label: 'Before Analytics Platform',
+                    data: [65, 63, 67, 64, 66, 65, 68, 67],
+                    borderColor: '#ef4444',
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    tension: 0.4
+                }, {
+                    label: 'After Analytics Platform',
+                    data: [67, 72, 78, 82, 85, 87, 89, 87],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 60,
+                        max: 95,
+                        ticks: {
+                            callback: function (value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Quality Improvement Chart
+        const qualityCtx = document.getElementById('qualityChart').getContext('2d');
+        new Chart(qualityCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Dimensional Defects', 'Surface Defects', 'Material Defects', 'Assembly Defects'],
+                datasets: [{
+                    label: 'Before (%)',
+                    data: [1.2, 0.8, 0.7, 0.5],
+                    backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                    borderColor: '#ef4444',
+                    borderWidth: 1
+                }, {
+                    label: 'After (%)',
+                    data: [0.15, 0.08, 0.07, 0.05],
+                    backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                    borderColor: '#10b981',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 1.5,
+                        ticks: {
+                            callback: function (value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+order_id,customer_name,product_name,quantity,unit_price,order_date,order_status,priority_flag,customer_segment,revenue
+1001,John Smith,Widget A,5,25.99,2024-01-15,Complete,Standard,Regular,129.95
+1002,Jane Doe,Widget B,3,19.99,2024-01-16,Pending,Standard,Regular,59.97
+1003,Mike Johnson,Widget A,2,25.99,2024-01-17,Complete,Standard,Regular,51.98
+1004,Sarah Connor,Widget C,1,29.99,2024-01-18,Shipped,Standard,Regular,29.99
+1005,Bob Wilson,Widget B,7,19.99,2024-01-19,Complete,Rush,Premium,139.93
+1006,Mary Jane,Widget A,1,25.99,2024-01-20,Pending,Standard,Regular,25.99
+1007,Tom Brown,Widget D,4,35.00,2024-01-21,Complete,Standard,Premium,140.00
+1008,Lisa Davis,Widget C,6,29.99,2024-01-22,Shipped,Standard,Premium,179.94
+1009,David Lee,Widget A,3,25.99,2024-01-23,Complete,Standard,Regular,77.97
+1010,Amy White,Widget B,2,19.99,2024-01-24,Pending,Follow-up,Regular,39.98

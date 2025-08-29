@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1A: E-commerce Sales Data Cleanup | DataPro Analytics</title>
+    <meta name="description"
+        content="Advanced data quality engineering for 105K+ e-commerce sales records with ML-powered validation, achieving 100% data quality and 905% ROI.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-detail-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-detail-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .project-content {
+            padding: 80px 0;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .challenge-card {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .challenge-card h4 {
+            color: #dc2626;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .solution-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .solution-card h4 {
+            color: #16a34a;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .tech-details {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-category {
+            margin-bottom: 2rem;
+        }
+
+        .tech-category h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .results-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .before-results,
+        .after-results {
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .before-results {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .after-results {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .before-results h3 {
+            color: #dc2626;
+            margin-bottom: 1.5rem;
+        }
+
+        .after-results h3 {
+            color: #16a34a;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-item {
+            margin-bottom: 1rem;
+        }
+
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .result-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: #1e40af;
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .results-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">DataPro Analytics</span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../services.html" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../case-studies/ecommerce-marketplace.html" class="nav-link">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Project Detail Hero -->
+    <section class="project-detail-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / E-commerce Data Cleanup
+            </div>
+            <h1 class="project-title">E-commerce Sales Data Cleanup</h1>
+            <p class="project-subtitle">Advanced data quality engineering for 105K+ sales records with ML-powered
+                validation and standardization</p>
+
+            <div class="project-metrics">
+                <div class="metric-card">
+                    <span class="metric-value">105K+</span>
+                    <span class="metric-label">Records Processed</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">100%</span>
+                    <span class="metric-label">Data Quality Score</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">905%</span>
+                    <span class="metric-label">ROI Achieved</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">15K+</span>
+                    <span class="metric-label">Issues Resolved</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+            <a href="../projects.html" class="back-button">
+                ← Back to Projects
+            </a>
+
+            <!-- Project Overview -->
+            <div class="content-section">
+                <h2 class="section-title">🎯 Project Overview</h2>
+                <p>This comprehensive data quality engineering project addressed critical data inconsistencies across
+                    multiple e-commerce platforms. The initiative involved processing over 105,000 sales records with
+                    advanced ML-powered validation techniques, achieving unprecedented data quality standards and
+                    delivering exceptional ROI.</p>
+            </div>
+
+            <!-- Business Challenges -->
+            <div class="content-section">
+                <h2 class="section-title">⚠️ Business Challenges</h2>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h4>🔄 Inconsistent Data Formats</h4>
+                        <p>Multiple date formats, currency representations, and product ID schemas across different
+                            sales channels created data integration nightmares.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>📊 Missing Critical Values</h4>
+                        <p>Significant gaps in customer information, product details, and transaction data affecting
+                            business intelligence and reporting accuracy.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>🔍 Duplicate Records</h4>
+                        <p>Complex duplicate detection challenges due to slight variations in customer names, addresses,
+                            and product descriptions across platforms.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>💰 Revenue Impact</h4>
+                        <p>Poor data quality was causing incorrect financial reporting, inventory miscounts, and
+                            customer service issues affecting bottom line.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Solutions -->
+            <div class="content-section">
+                <h2 class="section-title">🛠️ Technical Solutions</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>🤖 ML-Powered Validation</h4>
+                        <p>Implemented Random Forest and Isolation Forest algorithms for intelligent anomaly detection
+                            and data quality scoring with 95%+ accuracy.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🔧 Advanced Standardization</h4>
+                        <p>Developed comprehensive data standardization pipelines for dates, currencies, product IDs,
+                            and customer information using fuzzy logic matching.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🎯 Intelligent Imputation</h4>
+                        <p>Created sophisticated missing value imputation strategies using statistical methods and
+                            machine learning predictions based on similar records.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📈 Quality Monitoring</h4>
+                        <p>Established real-time data quality monitoring dashboards with automated alerts for data
+                            quality degradation and anomaly detection.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="content-section">
+                <h2 class="section-title">💻 Technology Stack</h2>
+                <div class="tech-details">
+                    <div class="tech-category">
+                        <h4>Data Processing & Analysis</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Python 3.9+</span>
+                            <span class="tech-item">Pandas</span>
+                            <span class="tech-item">NumPy</span>
+                            <span class="tech-item">Dask</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Machine Learning</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Scikit-learn</span>
+                            <span class="tech-item">Random Forest</span>
+                            <span class="tech-item">Isolation Forest</span>
+                            <span class="tech-item">Feature Engineering</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Data Quality & Matching</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">FuzzyWuzzy</span>
+                            <span class="tech-item">Levenshtein Distance</span>
+                            <span class="tech-item">Record Linkage</span>
+                            <span class="tech-item">Data Profiling</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Visualization & Reporting</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Matplotlib</span>
+                            <span class="tech-item">Seaborn</span>
+                            <span class="tech-item">Plotly</span>
+                            <span class="tech-item">Jupyter Notebooks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Comparison -->
+            <div class="content-section">
+                <h2 class="section-title">📊 Before vs After Results</h2>
+                <div class="results-comparison">
+                    <div class="before-results">
+                        <h3>❌ Before Implementation</h3>
+                        <div class="result-item">
+                            <span class="result-value">67%</span>
+                            <span class="result-description">Data Quality Score</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">15,000+</span>
+                            <span class="result-description">Data Inconsistencies</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">8 Hours</span>
+                            <span class="result-description">Daily Manual Cleanup</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">23%</span>
+                            <span class="result-description">Reporting Accuracy</span>
+                        </div>
+                    </div>
+                    <div class="after-results">
+                        <h3>✅ After Implementation</h3>
+                        <div class="result-item">
+                            <span class="result-value">100%</span>
+                            <span class="result-description">Data Quality Score</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">0</span>
+                            <span class="result-description">Outstanding Issues</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Automated</span>
+                            <span class="result-description">Real-time Processing</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">99.7%</span>
+                            <span class="result-description">Reporting Accuracy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Impact -->
+            <div class="content-section">
+                <h2 class="section-title">💼 Business Impact</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>💰 Financial Returns</h4>
+                        <p><strong>905% ROI</strong> achieved through reduced manual processing costs, improved
+                            decision-making accuracy, and enhanced customer satisfaction.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>⏱️ Operational Efficiency</h4>
+                        <p><strong>8 hours daily</strong> of manual data cleanup eliminated, allowing staff to focus on
+                            high-value analytical tasks and strategic initiatives.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📈 Data-Driven Decisions</h4>
+                        <p><strong>99.7% reporting accuracy</strong> enabled confident business decisions, accurate
+                            forecasting, and reliable performance metrics.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🔮 Future-Proof Foundation</h4>
+                        <p><strong>Scalable architecture</strong> established for handling growing data volumes with
+                            automated quality assurance and monitoring systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataPro Analytics</h3>
+                    <p>Transforming businesses through advanced data science and analytics solutions.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html#foundation">Data Foundation</a></li>
+                        <li><a href="../services.html#ml-enhancement">ML Enhancement</a></li>
+                        <li><a href="../services.html#strategic-bi">Strategic BI</a></li>
+                        <li><a href="../services.html#transformation">Complete Transformation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Projects</h4>
+                    <ul>
+                        <li><a href="../projects.html">All Projects</a></li>
+                        <li><a href="../case-studies/ecommerce-marketplace.html">Case Studies</a></li>
+                        <li><a href="../case-studies/regional-bank.html">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: ibraheemraouf685@gmail.com.com</p>
+                    <p>Phone: +92 315 3387878</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 DataPro Analytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

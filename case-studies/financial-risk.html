@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Risk Analytics - Case Study</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DataStrategy Pro</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="#" class="active">Case Studies</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="case-study">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="case-hero">
+                <div class="case-hero-content">
+                    <span class="case-category">Project 2A • ML Enhancement</span>
+                    <h1>AI-Powered Financial Risk Analytics</h1>
+                    <p class="case-subtitle">Deployed machine learning models to predict loan defaults and optimize
+                        credit decisions, reducing bad debt by 42% and increasing profitable lending by $2.8M annually.
+                    </p>
+
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">42%</span>
+                            <span class="metric-label">Bad Debt Reduction</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">$2.8M</span>
+                            <span class="metric-label">Revenue Increase</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">94.3%</span>
+                            <span class="metric-label">Model Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">18 Days</span>
+                            <span class="metric-label">Implementation</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Executive Summary -->
+            <section class="executive-summary">
+                <h2>Executive Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <h3>Client Profile</h3>
+                        <p>Regional credit union with $850M in assets, serving 45,000 members with traditional credit
+                            scoring methods and rising default rates.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Challenge</h3>
+                        <p>Increasing loan defaults (8.2% vs industry 5.1%), outdated risk assessment methods, and
+                            missed opportunities for profitable lending to underserved segments.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Solution</h3>
+                        <p>Advanced ML models using 200+ data points for real-time risk scoring, automated decision
+                            workflows, and continuous model monitoring and optimization.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Investment</h3>
+                        <p>$6,800 project cost with 18-day implementation, including model development, integration, and
+                            staff training.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Challenge -->
+            <section class="challenge-section">
+                <h2>The Challenge</h2>
+                <div class="challenge-content">
+                    <div class="challenge-text">
+                        <h3>Rising Defaults and Missed Opportunities</h3>
+                        <p>The credit union faced mounting pressure from increasing loan defaults and competitive
+                            disadvantages:</p>
+                        <ul>
+                            <li><strong>High Default Rates:</strong> 8.2% default rate, 60% above industry average,
+                                costing $1.2M annually</li>
+                            <li><strong>Outdated Risk Models:</strong> Relying solely on FICO scores and basic
+                                debt-to-income ratios</li>
+                            <li><strong>Manual Processes:</strong> 3-5 day approval times vs competitors' same-day
+                                decisions</li>
+                            <li><strong>Missed Revenue:</strong> Rejecting creditworthy applicants due to conservative,
+                                one-size-fits-all criteria</li>
+                            <li><strong>Regulatory Pressure:</strong> Need for fair lending compliance and explainable
+                                decision-making</li>
+                        </ul>
+                    </div>
+                    <div class="data-sample">
+                        <h4>Traditional vs. ML Risk Assessment</h4>
+                        <div class="code-block">
+                            <pre>Traditional Risk Factors (5 variables):
+- FICO Score: 720
+- Debt-to-Income: 28%
+- Employment Length: 3 years
+- Loan Amount: $25,000
+- Collateral Value: $30,000
+
+Decision: APPROVED (meets basic thresholds)
+Actual Outcome: DEFAULTED after 14 months
+
+ML Enhanced Assessment (200+ variables):
+- Payment behavior patterns
+- Account usage trends
+- Seasonal income variations
+- Geographic risk factors
+- Social network indicators
+- Transaction categorization
+- Cash flow stability metrics
+
+ML Risk Score: 0.73 (High Risk)
+Recommendation: DECLINE or require additional collateral</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Approach -->
+            <section class="approach-section">
+                <h2>Our Approach</h2>
+                <div class="approach-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>Data Engineering & Feature Development (Days 1-5)</h3>
+                            <p>Integrated 15 data sources, engineered 200+ predictive features, and created
+                                comprehensive member behavior profiles for model training.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>Model Development & Validation (Days 6-12)</h3>
+                            <p>Developed ensemble models using XGBoost, Random Forest, and Neural Networks, with
+                                rigorous backtesting on 5 years of historical data.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>Integration & Automation (Days 13-16)</h3>
+                            <p>Built real-time scoring API, integrated with loan origination system, and created
+                                automated decision workflows with human oversight.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>Testing & Deployment (Days 17-18)</h3>
+                            <p>Conducted A/B testing, trained underwriting staff, and deployed with gradual rollout and
+                                continuous monitoring systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Implementation -->
+            <section class="technical-section">
+                <h2>Technical Implementation</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h3>Feature Engineering Pipeline</h3>
+                        <div class="code-block">
+                            <pre># Advanced feature engineering for credit risk
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+from datetime import datetime, timedelta
+
+def create_behavioral_features(transaction_data, member_id):
+    member_txns = transaction_data[transaction_data['member_id'] == member_id]
+    
+    features = {}
+    
+    # Cash flow stability metrics
+    monthly_balances = member_txns.groupby('month')['balance'].mean()
+    features['balance_volatility'] = monthly_balances.std() / monthly_balances.mean()
+    features['balance_trend'] = np.polyfit(range(len(monthly_balances)), monthly_balances, 1)[0]
+    
+    # Payment behavior patterns
+    payment_txns = member_txns[member_txns['type'] == 'payment']
+    features['avg_payment_amount'] = payment_txns['amount'].mean()
+    features['payment_consistency'] = 1 - (payment_txns['amount'].std() / payment_txns['amount'].mean())
+    
+    # Overdraft and fee patterns
+    overdraft_txns = member_txns[member_txns['type'] == 'overdraft']
+    features['overdraft_frequency'] = len(overdraft_txns) / len(member_txns)
+    features['avg_overdraft_amount'] = overdraft_txns['amount'].mean() if len(overdraft_txns) > 0 else 0
+    
+    # Seasonal patterns
+    features['income_seasonality'] = calculate_seasonality(member_txns, 'deposit')
+    features['spending_seasonality'] = calculate_seasonality(member_txns, 'withdrawal')
+    
+    return features
+
+def calculate_seasonality(txns, txn_type):
+    monthly_amounts = txns[txns['type'] == txn_type].groupby('month')['amount'].sum()
+    return monthly_amounts.std() / monthly_amounts.mean() if len(monthly_amounts) > 0 else 0</pre>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Ensemble Risk Model</h3>
+                        <div class="code-block">
+                            <pre># Ensemble model for credit risk prediction
+from xgboost import XGBClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neural_network import MLPClassifier
+from sklearn.ensemble import VotingClassifier
+from sklearn.model_selection import cross_val_score
+
+class CreditRiskEnsemble:
+    def __init__(self):
+        # Individual models with optimized hyperparameters
+        self.xgb_model = XGBClassifier(
+            n_estimators=200,
+            max_depth=6,
+            learning_rate=0.1,
+            subsample=0.8,
+            random_state=42
+        )
+        
+        self.rf_model = RandomForestClassifier(
+            n_estimators=150,
+            max_depth=8,
+            min_samples_split=5,
+            random_state=42
+        )
+        
+        self.nn_model = MLPClassifier(
+            hidden_layer_sizes=(100, 50),
+            activation='relu',
+            solver='adam',
+            random_state=42
+        )
+        
+        # Ensemble with weighted voting
+        self.ensemble = VotingClassifier(
+            estimators=[
+                ('xgb', self.xgb_model),
+                ('rf', self.rf_model),
+                ('nn', self.nn_model)
+            ],
+            voting='soft',
+            weights=[0.4, 0.35, 0.25]  # XGB gets highest weight
+        )
+    
+    def train(self, X_train, y_train):
+        self.ensemble.fit(X_train, y_train)
+        
+        # Calculate feature importance
+        self.feature_importance = self.calculate_ensemble_importance(X_train)
+        
+        return self
+    
+    def predict_risk_score(self, X):
+        # Return probability of default (0-1 scale)
+        return self.ensemble.predict_proba(X)[:, 1]
+    
+    def get_risk_category(self, risk_score):
+        if risk_score < 0.2:
+            return 'Low Risk', 'AUTO_APPROVE'
+        elif risk_score < 0.4:
+            return 'Medium Risk', 'MANUAL_REVIEW'
+        elif risk_score < 0.7:
+            return 'High Risk', 'ADDITIONAL_COLLATERAL'
+        else:
+            return 'Very High Risk', 'DECLINE'</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h3>Technology Stack</h3>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">XGBoost</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                        <span class="tech-badge">TensorFlow</span>
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">MLflow</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section">
+                <h2>Business Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Default Rate Reduction</h3>
+                        <div class="result-chart">
+                            <canvas id="defaultChart" width="300" height="200"></canvas>
+                        </div>
+                        <p>Reduced default rates from 8.2% to 4.8%, saving $1.7M annually in bad debt expenses.</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>Model Performance</h3>
+                        <div class="result-chart">
+                            <canvas id="performanceChart" width="300" height="200"></canvas>
+                        </div>
+                        <p>Achieved 94.3% accuracy with 89% precision and 91% recall on validation data.</p>
+                    </div>
+                </div>
+
+                <div class="roi-breakdown">
+                    <h3>Financial Impact Analysis</h3>
+                    <div class="roi-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Impact Category</th>
+                                    <th>Annual Benefit</th>
+                                    <th>Calculation Method</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Reduced Bad Debt</td>
+                                    <td>$1,700,000</td>
+                                    <td>3.4% default reduction × $50M loan portfolio</td>
+                                </tr>
+                                <tr>
+                                    <td>Increased Lending Volume</td>
+                                    <td>$850,000</td>
+                                    <td>15% more approvals × $5.7M additional loans × 15% margin</td>
+                                </tr>
+                                <tr>
+                                    <td>Operational Efficiency</td>
+                                    <td>$180,000</td>
+                                    <td>60% faster decisions × 3 FTE × $60K salary</td>
+                                </tr>
+                                <tr>
+                                    <td>Competitive Advantage</td>
+                                    <td>$120,000</td>
+                                    <td>Member retention and acquisition improvements</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Total Annual Benefit</strong></td>
+                                    <td><strong>$2,850,000</strong></td>
+                                    <td><strong>ROI: 41,812%</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="model-insights">
+                    <h3>Key Model Insights</h3>
+                    <div class="insights-grid">
+                        <div class="insight-item">
+                            <h4>Top Risk Predictors</h4>
+                            <ul>
+                                <li>Cash flow volatility (23% importance)</li>
+                                <li>Payment consistency (18% importance)</li>
+                                <li>Account usage patterns (15% importance)</li>
+                                <li>Overdraft frequency (12% importance)</li>
+                                <li>Income stability (11% importance)</li>
+                            </ul>
+                        </div>
+                        <div class="insight-item">
+                            <h4>Surprising Discoveries</h4>
+                            <ul>
+                                <li>Traditional FICO scores only 8% predictive power</li>
+                                <li>Transaction timing patterns highly predictive</li>
+                                <li>Small, consistent payments better than large irregular ones</li>
+                                <li>Geographic factors more important than expected</li>
+                                <li>Social network effects detectable in data</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Client Testimonial -->
+            <section class="testimonial-section">
+                <div class="testimonial">
+                    <blockquote>
+                        "The ML risk models transformed our lending business. We're now making better decisions faster,
+                        helping more members while protecting our institution. The ROI exceeded our wildest
+                        expectations."
+                    </blockquote>
+                    <cite>— Jennifer Rodriguez, Chief Risk Officer, Community First Credit Union</cite>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Enhance Your Risk Management?</h2>
+                    <p>Deploy AI-powered risk analytics to reduce defaults and increase profitable lending.</p>
+                    <div class="cta-buttons">
+                        <a href="../contact.html" class="btn btn-primary">Get ML Assessment</a>
+                        <a href="../services.html" class="btn btn-secondary">View ML Services</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataStrategy Pro</h3>
+                    <p>Transforming business data into strategic intelligence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html">Data Foundation</a></li>
+                        <li><a href="../services.html">ML Enhancement</a></li>
+                        <li><a href="../services.html">Strategic BI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>ibraheemraouf685@gmail.com</p>
+                    <p>+92 315 3387878</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DataStrategy Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Default Rate Chart
+        const defaultCtx = document.getElementById('defaultChart').getContext('2d');
+        new Chart(defaultCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Before ML',
+                    data: [8.1, 8.3, 8.0, 8.4, 8.2, 8.5, 8.1, 8.3, 8.2, 8.0, 8.4, 8.2],
+                    borderColor: '#ef4444',
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    tension: 0.4
+                }, {
+                    label: 'After ML',
+                    data: [8.2, 7.8, 7.2, 6.5, 5.8, 5.2, 4.9, 4.7, 4.8, 4.6, 4.8, 4.8],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 4,
+                        max: 9
+                    }
+                }
+            }
+        });
+
+        // Model Performance Chart
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(performanceCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Accuracy', 'Precision', 'Recall', 'F1-Score', 'AUC-ROC'],
+                datasets: [{
+                    label: 'ML Model Performance',
+                    data: [94.3, 89.1, 91.2, 90.1, 96.7],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    pointBackgroundColor: '#3b82f6'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

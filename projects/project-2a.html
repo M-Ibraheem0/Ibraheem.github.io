@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2A: Loan Data Quality Management System | DataPro Analytics</title>
+    <meta name="description"
+        content="ML-powered validation, anomaly detection, and real-time monitoring for 50,000 loan applications with advanced data quality management.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-detail-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-detail-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .project-content {
+            padding: 80px 0;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .challenge-card {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .challenge-card h4 {
+            color: #dc2626;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .solution-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .solution-card h4 {
+            color: #16a34a;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .tech-details {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-category {
+            margin-bottom: 2rem;
+        }
+
+        .tech-category h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .results-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .before-results,
+        .after-results {
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .before-results {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .after-results {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .before-results h3 {
+            color: #dc2626;
+            margin-bottom: 1.5rem;
+        }
+
+        .after-results h3 {
+            color: #16a34a;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-item {
+            margin-bottom: 1rem;
+        }
+
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .result-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: #1e40af;
+            transform: translateX(-4px);
+        }
+
+        .demo-section {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .demo-button {
+            background: #10b981;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-button:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .ml-highlight {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .ml-highlight h4 {
+            color: #0369a1;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .results-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">DataPro Analytics</span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../services.html" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../case-studies/ecommerce-marketplace.html" class="nav-link">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Project Detail Hero -->
+    <section class="project-detail-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / Loan Data Quality
+                Management
+            </div>
+            <h1 class="project-title">Loan Data Quality Management System</h1>
+            <p class="project-subtitle">ML-powered validation, anomaly detection, and real-time monitoring for 50,000
+                loan applications</p>
+
+            <div class="project-metrics">
+                <div class="metric-card">
+                    <span class="metric-value">50K+</span>
+                    <span class="metric-label">Loan Applications</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">95%</span>
+                    <span class="metric-label">Anomaly Detection</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">Real-time</span>
+                    <span class="metric-label">Monitoring</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">ML-Powered</span>
+                    <span class="metric-label">Validation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+            <a href="../projects.html" class="back-button">
+                ← Back to Projects
+            </a>
+
+            <!-- Project Overview -->
+            <div class="content-section">
+                <h2 class="section-title">🎯 Project Overview</h2>
+                <p>This advanced loan data quality management system revolutionized financial data processing through
+                    machine learning-powered validation, real-time anomaly detection, and comprehensive monitoring. The
+                    platform processed over 50,000 loan applications while maintaining exceptional data quality
+                    standards and regulatory compliance in the financial services sector.</p>
+            </div>
+
+            <!-- ML & AI Highlight -->
+            <div class="content-section">
+                <div class="ml-highlight">
+                    <h4>🤖 Machine Learning Innovation</h4>
+                    <p>This project leveraged cutting-edge ML algorithms for intelligent data validation, including
+                        ensemble anomaly detection models, automated pattern recognition, and predictive quality
+                        scoring. The system continuously learns from data patterns to improve validation accuracy and
+                        reduce false positives.</p>
+                </div>
+            </div>
+
+            <!-- Business Challenges -->
+            <div class="content-section">
+                <h2 class="section-title">⚠️ Business Challenges</h2>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h4>📊 Complex Data Validation</h4>
+                        <p>Loan applications contain hundreds of fields requiring sophisticated validation rules and
+                            cross-field consistency checks.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>🚨 Fraud Detection</h4>
+                        <p>Need for real-time identification of suspicious patterns and potential fraudulent
+                            applications in high-volume processing.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>⚡ Real-time Processing</h4>
+                        <p>Requirement for instant data quality assessment to support rapid loan decision-making
+                            processes.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>📋 Regulatory Compliance</h4>
+                        <p>Strict adherence to financial regulations including GDPR, CCPA, and banking industry data
+                            standards.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>📈 Scalability Requirements</h4>
+                        <p>System must handle varying loan application volumes while maintaining consistent performance
+                            and accuracy.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>🔄 Data Integration</h4>
+                        <p>Integration with multiple external data sources including credit bureaus, employment
+                            verification, and asset validation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Solutions -->
+            <div class="content-section">
+                <h2 class="section-title">🛠️ Technical Solutions</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>🤖 ML-Powered Validation</h4>
+                        <p>Advanced machine learning models for intelligent data validation, pattern recognition, and
+                            automated quality scoring.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🔍 Anomaly Detection Engine</h4>
+                        <p>Real-time anomaly detection using ensemble methods, statistical analysis, and behavioral
+                            pattern recognition.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📊 Real-time Monitoring</h4>
+                        <p>Comprehensive monitoring dashboard with live data quality metrics, alerts, and performance
+                            tracking.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🔄 Automated Workflows</h4>
+                        <p>Intelligent workflow automation for data processing, validation routing, and exception
+                            handling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Demo Section -->
+            <div class="content-section">
+                <h2 class="section-title">🚀 Live Demo</h2>
+                <div class="demo-section">
+                    <h4>Interactive Loan Data Quality System</h4>
+                    <p>Experience the ML-powered validation and monitoring capabilities:</p>
+                    <button class="demo-button" onclick="runDemo('ml-validation')">ML Validation Demo</button>
+                    <button class="demo-button" onclick="runDemo('anomaly-detection')">Anomaly Detection Demo</button>
+                    <button class="demo-button" onclick="runDemo('real-time-monitoring')">Real-time Monitoring
+                        Demo</button>
+                    <button class="demo-button" onclick="runDemo('quality-scoring')">Quality Scoring Demo</button>
+                    <div id="demo-output"
+                        style="margin-top: 2rem; padding: 1rem; background: white; border-radius: 8px; min-height: 100px; border: 1px solid #e5e7eb;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="content-section">
+                <h2 class="section-title">💻 Technology Stack</h2>
+                <div class="tech-details">
+                    <div class="tech-category">
+                        <h4>Machine Learning & AI</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Python 3.9+</span>
+                            <span class="tech-item">Scikit-learn</span>
+                            <span class="tech-item">TensorFlow</span>
+                            <span class="tech-item">XGBoost</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Data Processing & Validation</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Pandas</span>
+                            <span class="tech-item">NumPy</span>
+                            <span class="tech-item">Great Expectations</span>
+                            <span class="tech-item">Apache Kafka</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Anomaly Detection</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Isolation Forest</span>
+                            <span class="tech-item">One-Class SVM</span>
+                            <span class="tech-item">DBSCAN</span>
+                            <span class="tech-item">Statistical Analysis</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Monitoring & Visualization</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Grafana</span>
+                            <span class="tech-item">Prometheus</span>
+                            <span class="tech-item">ELK Stack</span>
+                            <span class="tech-item">Real-time Dashboards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Comparison -->
+            <div class="content-section">
+                <h2 class="section-title">📊 Before vs After Results</h2>
+                <div class="results-comparison">
+                    <div class="before-results">
+                        <h3>❌ Before Implementation</h3>
+                        <div class="result-item">
+                            <span class="result-value">Manual</span>
+                            <span class="result-description">Data Validation</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">60%</span>
+                            <span class="result-description">Anomaly Detection Rate</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">24 Hours</span>
+                            <span class="result-description">Processing Time</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">High</span>
+                            <span class="result-description">False Positive Rate</span>
+                        </div>
+                    </div>
+                    <div class="after-results">
+                        <h3>✅ After Implementation</h3>
+                        <div class="result-item">
+                            <span class="result-value">ML-Powered</span>
+                            <span class="result-description">Automated Validation</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">95%</span>
+                            <span class="result-description">Anomaly Detection Rate</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Real-time</span>
+                            <span class="result-description">Instant Processing</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Low</span>
+                            <span class="result-description">False Positive Rate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Impact -->
+            <div class="content-section">
+                <h2 class="section-title">💼 Business Impact</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>🚀 Processing Efficiency</h4>
+                        <p><strong>Real-time processing</strong> of 50,000+ loan applications with instant data quality
+                            assessment and validation.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🎯 Enhanced Accuracy</h4>
+                        <p><strong>95% anomaly detection rate</strong> with significantly reduced false positives
+                            through ML-powered validation.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🔒 Risk Mitigation</h4>
+                        <p><strong>Advanced fraud detection</strong> capabilities protecting against financial losses
+                            and regulatory violations.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📈 Scalable Architecture</h4>
+                        <p><strong>Cloud-native platform</strong> ready for high-volume processing with automated
+                            scaling and monitoring.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataPro Analytics</h3>
+                    <p>Transforming businesses through advanced data science and analytics solutions.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html#foundation">Data Foundation</a></li>
+                        <li><a href="../services.html#ml-enhancement">ML Enhancement</a></li>
+                        <li><a href="../services.html#strategic-bi">Strategic BI</a></li>
+                        <li><a href="../services.html#transformation">Complete Transformation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Projects</h4>
+                    <ul>
+                        <li><a href="../projects.html">All Projects</a></li>
+                        <li><a href="../case-studies/ecommerce-marketplace.html">Case Studies</a></li>
+                        <li><a href="../case-studies/regional-bank.html">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: ibraheemraouf685@gmail.com.com</p>
+                    <p>Phone: +92 315 3387878</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 DataPro Analytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function runDemo(demoType) {
+            const output = document.getElementById('demo-output');
+
+            switch (demoType) {
+                case 'ml-validation':
+                    output.innerHTML = `
+                        <h5>🤖 ML Validation Demo</h5>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div style="background: #fef2f2; padding: 1rem; border-radius: 8px;">
+                                <strong>Input Data:</strong><br>
+                                • Income: $75,000<br>
+                                • Credit Score: 720<br>
+                                • Debt-to-Income: 35%<br>
+                                • Employment: 3 years<br>
+                                • Loan Amount: $250,000
+                            </div>
+                            <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px;">
+                                <strong>ML Validation Results:</strong><br>
+                                • Income Verification: ✅ Valid<br>
+                                • Credit Score: ✅ Excellent<br>
+                                • DTI Ratio: ✅ Acceptable<br>
+                                • Employment: ✅ Stable<br>
+                                • Risk Score: 92/100
+                            </div>
+                        </div>
+                        <p style="margin-top: 1rem; color: #16a34a; font-weight: 600;">✅ ML model validated application with 92% confidence score</p>
+                    `;
+                    break;
+                case 'anomaly-detection':
+                    output.innerHTML = `
+                        <h5>🔍 Anomaly Detection Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>Anomaly Detection Results:</strong>
+                                <div style="margin-top: 1rem;">
+                                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                        <span style="color: #dc2626; margin-right: 0.5rem;">🚨</span>
+                                        <span>Suspicious Income Pattern: Income vs. Employment mismatch detected</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                        <span style="color: #f59e0b; margin-right: 0.5rem;">⚠️</span>
+                                        <span>Unusual Address History: 5 addresses in 2 years</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                        <span style="color: #16a34a; margin-right: 0.5rem;">✅</span>
+                                        <span>Credit History: Normal pattern detected</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                        <span style="color: #dc2626; margin-right: 0.5rem;">🚨</span>
+                                        <span>Application Timing: Multiple applications in 24 hours</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #dc2626; font-weight: 600;">🚨 High-risk application flagged for manual review</p>
+                    `;
+                    break;
+                case 'real-time-monitoring':
+                    output.innerHTML = `
+                        <h5>📊 Real-time Monitoring Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>Live System Metrics:</strong>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">1,247</div>
+                                        <div style="font-size: 0.9rem;">Applications Today</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">98.5%</div>
+                                        <div style="font-size: 0.9rem;">Data Quality Score</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #fef2f2; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #dc2626;">23</div>
+                                        <div style="font-size: 0.9rem;">Anomalies Detected</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">0.8s</div>
+                                        <div style="font-size: 0.9rem;">Avg Processing Time</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #16a34a; font-weight: 600;">✅ System operating at optimal performance</p>
+                    `;
+                    break;
+                case 'quality-scoring':
+                    output.innerHTML = `
+                        <h5>📊 Quality Scoring Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>Application Quality Assessment:</strong>
+                                <div style="margin-top: 1rem;">
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Data Completeness</span>
+                                            <span style="font-weight: bold; color: #16a34a;">95%</span>
+                                        </div>
+                                        <div style="background: #e5e7eb; border-radius: 10px; height: 8px;">
+                                            <div style="background: #16a34a; height: 8px; border-radius: 10px; width: 95%;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Data Accuracy</span>
+                                            <span style="font-weight: bold; color: #16a34a;">92%</span>
+                                        </div>
+                                        <div style="background: #e5e7eb; border-radius: 10px; height: 8px;">
+                                            <div style="background: #16a34a; height: 8px; border-radius: 10px; width: 92%;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Consistency Score</span>
+                                            <span style="font-weight: bold; color: #f59e0b;">78%</span>
+                                        </div>
+                                        <div style="background: #e5e7eb; border-radius: 10px; height: 8px;">
+                                            <div style="background: #f59e0b; height: 8px; border-radius: 10px; width: 78%;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="text-align: center; margin-top: 1rem; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 2rem; font-weight: bold; color: #16a34a;">88/100</div>
+                                        <div style="font-size: 0.9rem;">Overall Quality Score</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #16a34a; font-weight: 600;">✅ High-quality application approved for processing</p>
+                    `;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Growth Analytics - Case Study</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DataStrategy Pro</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="#" class="active">Case Studies</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="case-study">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="case-hero">
+                <div class="case-hero-content">
+                    <span class="case-category">Project 3B • Strategic BI</span>
+                    <h1>SaaS Growth Analytics & Revenue Intelligence</h1>
+                    <p class="case-subtitle">Built comprehensive growth analytics platform integrating customer data,
+                        usage metrics, and financial systems to optimize pricing, reduce churn, and accelerate expansion
+                        revenue by $4.2M annually.</p>
+
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">$4.2M</span>
+                            <span class="metric-label">ARR Growth</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">43%</span>
+                            <span class="metric-label">Churn Reduction</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">67%</span>
+                            <span class="metric-label">Expansion Revenue</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">16 Days</span>
+                            <span class="metric-label">Implementation</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Executive Summary -->
+            <section class="executive-summary">
+                <h2>Executive Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <h3>Client Profile</h3>
+                        <p>B2B SaaS company with $12M ARR, 2,400 customers, struggling with high churn rates and limited
+                            visibility into expansion opportunities.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Challenge</h3>
+                        <p>18% annual churn rate, fragmented customer data across 7 systems, reactive customer success
+                            approach, and missed upselling opportunities worth millions.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Solution</h3>
+                        <p>Unified growth analytics platform with predictive churn modeling, customer health scoring,
+                            expansion opportunity identification, and automated alerts.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Investment</h3>
+                        <p>$9,200 project cost with 16-day implementation, including data integration, ML model
+                            development, and dashboard creation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Challenge -->
+            <section class="challenge-section">
+                <h2>The Challenge</h2>
+                <div class="challenge-content">
+                    <div class="challenge-text">
+                        <h3>Growth Stagnation and Revenue Leakage</h3>
+                        <p>The SaaS company faced critical growth challenges:</p>
+                        <ul>
+                            <li><strong>High Churn Rate:</strong> 18% annual churn costing $2.1M in lost ARR</li>
+                            <li><strong>Data Silos:</strong> Customer data scattered across CRM, billing, support, and
+                                product analytics</li>
+                            <li><strong>Reactive Approach:</strong> Customer success team only acted after problems
+                                occurred</li>
+                            <li><strong>Missed Opportunities:</strong> No systematic identification of expansion revenue
+                                potential</li>
+                            <li><strong>Limited Insights:</strong> No visibility into customer health, usage patterns,
+                                or satisfaction drivers</li>
+                            <li><strong>Inefficient Pricing:</strong> One-size-fits-all pricing not optimized for
+                                customer segments</li>
+                        </ul>
+                    </div>
+                    <div class="data-sample">
+                        <h4>Fragmented SaaS Data Example</h4>
+                        <div class="code-block">
+                            <pre>Customer: TechCorp Solutions (ID: 1247)
+Contract Value: $24,000/year
+Start Date: 2023-03-15
+
+CRM System (Salesforce):
+- Account Owner: Sarah Johnson
+- Industry: Technology
+- Company Size: 150 employees
+- Last Contact: 45 days ago
+- Health Score: Not Available
+- Renewal Date: 2024-03-15
+
+Billing System (Stripe):
+- MRR: $2,000
+- Payment Status: Current
+- Last Payment: 2024-01-15
+- Payment Method: Credit Card
+- Invoices: 10 (all paid on time)
+
+Product Analytics (Mixpanel):
+- Monthly Active Users: 23 (down from 45)
+- Feature Usage: Basic plan features only
+- Login Frequency: 2.3x/week (down 40%)
+- Support Tickets: 8 in last 90 days
+- API Calls: 1,200/month (limit: 10,000)
+
+Support System (Zendesk):
+- Satisfaction Score: 3.2/5 (declining)
+- Response Time: 4.2 hours avg
+- Open Tickets: 2 (both technical issues)
+- Escalations: 1 in last quarter
+
+Problems:
+❌ No unified customer view
+❌ Declining usage not flagged
+❌ Expansion opportunity missed
+❌ Churn risk not identified
+❌ Customer success reactive only</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Approach -->
+            <section class="approach-section">
+                <h2>Our Approach</h2>
+                <div class="approach-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>Data Integration & Customer 360 (Days 1-5)</h3>
+                            <p>Connected CRM, billing, product analytics, support, and marketing systems to create
+                                unified customer profiles with real-time data synchronization.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>Predictive Analytics Development (Days 6-10)</h3>
+                            <p>Built ML models for churn prediction, customer health scoring, expansion opportunity
+                                identification, and lifetime value calculation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>Growth Intelligence Dashboard (Days 11-14)</h3>
+                            <p>Created executive and operational dashboards with real-time metrics, predictive insights,
+                                and automated alert systems.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>Team Training & Optimization (Days 15-16)</h3>
+                            <p>Trained customer success and sales teams on new analytics tools, implemented automated
+                                workflows, and optimized alert thresholds.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Implementation -->
+            <section class="technical-section">
+                <h2>Technical Implementation</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h3>Customer Health Scoring Engine</h3>
+                        <div class="code-block">
+                            <pre># Advanced customer health and churn prediction system
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingRegressor
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+
+class CustomerHealthEngine:
+    def __init__(self):
+        self.churn_model = RandomForestClassifier(n_estimators=100, random_state=42)
+        self.ltv_model = GradientBoostingRegressor(n_estimators=100, random_state=42)
+        self.scaler = StandardScaler()
+        self.feature_importance = {}
+        
+    def calculate_customer_health_score(self, customer_data, usage_data, billing_data, support_data):
+        """Calculate comprehensive customer health score"""
+        health_features = []
+        
+        for customer_id in customer_data['customer_id'].unique():
+            # Get customer-specific data
+            customer = customer_data[customer_data['customer_id'] == customer_id].iloc[0]
+            usage = usage_data[usage_data['customer_id'] == customer_id]
+            billing = billing_data[billing_data['customer_id'] == customer_id]
+            support = support_data[support_data['customer_id'] == customer_id]
+            
+            # Usage metrics
+            current_date = datetime.now()
+            usage_30d = usage[usage['date'] >= current_date - timedelta(days=30)]
+            usage_90d = usage[usage['date'] >= current_date - timedelta(days=90)]
+            
+            # Calculate usage trends
+            if len(usage_30d) > 0 and len(usage_90d) > 0:
+                avg_usage_30d = usage_30d['daily_active_users'].mean()
+                avg_usage_90d = usage_90d['daily_active_users'].mean()
+                usage_trend = (avg_usage_30d - avg_usage_90d) / avg_usage_90d if avg_usage_90d > 0 else 0
+            else:
+                avg_usage_30d = 0
+                usage_trend = -1  # No usage is bad
+            
+            # Feature adoption
+            total_features = 25  # Total available features
+            used_features = usage_30d['features_used'].nunique() if len(usage_30d) > 0 else 0
+            feature_adoption_rate = used_features / total_features
+            
+            # Billing health
+            billing_30d = billing[billing['date'] >= current_date - timedelta(days=30)]
+            payment_issues = len(billing_30d[billing_30d['status'] == 'failed'])
+            days_since_last_payment = (current_date - billing['date'].max()).days if len(billing) > 0 else 999
+            
+            # Support metrics
+            support_30d = support[support['created_date'] >= current_date - timedelta(days=30)]
+            support_tickets_30d = len(support_30d)
+            avg_satisfaction = support_30d['satisfaction_score'].mean() if len(support_30d) > 0 else 5.0
+            escalations_30d = len(support_30d[support_30d['escalated'] == True])
+            
+            # Contract metrics
+            days_to_renewal = (pd.to_datetime(customer['renewal_date']) - current_date).days
+            contract_value = customer['mrr'] * 12
+            
+            # Engagement metrics
+            login_frequency = usage_30d['login_count'].sum() if len(usage_30d) > 0 else 0
+            api_usage_ratio = usage_30d['api_calls'].sum() / customer['api_limit'] if customer['api_limit'] > 0 else 0
+            
+            # Compile features
+            features = {
+                'customer_id': customer_id,
+                'usage_trend': usage_trend,
+                'avg_usage_30d': avg_usage_30d,
+                'feature_adoption_rate': feature_adoption_rate,
+                'login_frequency': login_frequency,
+                'api_usage_ratio': min(api_usage_ratio, 1.0),  # Cap at 100%
+                'payment_issues': payment_issues,
+                'days_since_last_payment': min(days_since_last_payment, 90),  # Cap for scoring
+                'support_tickets_30d': support_tickets_30d,
+                'avg_satisfaction': avg_satisfaction,
+                'escalations_30d': escalations_30d,
+                'days_to_renewal': days_to_renewal,
+                'contract_value': contract_value,
+                'customer_age_days': (current_date - pd.to_datetime(customer['start_date'])).days
+            }
+            
+            health_features.append(features)
+        
+        health_df = pd.DataFrame(health_features)
+        
+        # Calculate health score (0-100)
+        health_df['health_score'] = self.calculate_weighted_health_score(health_df)
+        
+        # Categorize health
+        health_df['health_category'] = health_df['health_score'].apply(self.categorize_health)
+        
+        return health_df
+    
+    def calculate_weighted_health_score(self, features_df):
+        """Calculate weighted health score based on multiple factors"""
+        scores = []
+        
+        for _, row in features_df.iterrows():
+            # Usage health (30% weight)
+            usage_score = 0
+            if row['usage_trend'] > 0.1:  # Growing usage
+                usage_score += 30
+            elif row['usage_trend'] > -0.1:  # Stable usage
+                usage_score += 20
+            else:  # Declining usage
+                usage_score += 5
+                
+            usage_score += min(row['feature_adoption_rate'] * 20, 20)  # Feature adoption
+            usage_score += min(row['login_frequency'] / 30 * 10, 10)  # Login frequency
+            
+            # Billing health (25% weight)
+            billing_score = 25
+            billing_score -= row['payment_issues'] * 5  # Deduct for payment issues
+            billing_score -= max(0, (row['days_since_last_payment'] - 30) / 10)  # Deduct for late payments
+            billing_score = max(0, billing_score)
+            
+            # Support health (20% weight)
+            support_score = 20
+            support_score -= min(row['support_tickets_30d'] * 2, 15)  # Deduct for tickets
+            support_score -= row['escalations_30d'] * 3  # Deduct for escalations
+            support_score += (row['avg_satisfaction'] - 3) * 2  # Bonus for high satisfaction
+            support_score = max(0, min(support_score, 20))
+            
+            # Contract health (15% weight)
+            contract_score = 15
+            if row['days_to_renewal'] < 30:  # Renewal risk
+                contract_score *= 0.5
+            elif row['days_to_renewal'] < 90:
+                contract_score *= 0.8
+                
+            # Engagement health (10% weight)
+            engagement_score = min(row['api_usage_ratio'] * 10, 10)
+            
+            total_score = usage_score + billing_score + support_score + contract_score + engagement_score
+            scores.append(min(100, max(0, total_score)))
+        
+        return scores
+    
+    def categorize_health(self, score):
+        """Categorize health score into actionable segments"""
+        if score >= 80:
+            return 'Healthy'
+        elif score >= 60:
+            return 'At Risk'
+        elif score >= 40:
+            return 'Critical'
+        else:
+            return 'Churning'
+    
+    def predict_churn_probability(self, health_features):
+        """Predict churn probability using ML model"""
+        feature_columns = [
+            'usage_trend', 'avg_usage_30d', 'feature_adoption_rate',
+            'login_frequency', 'api_usage_ratio', 'payment_issues',
+            'days_since_last_payment', 'support_tickets_30d',
+            'avg_satisfaction', 'escalations_30d', 'days_to_renewal',
+            'contract_value', 'customer_age_days'
+        ]
+        
+        X = health_features[feature_columns].fillna(0)
+        
+        # If model is trained, predict
+        if hasattr(self.churn_model, 'feature_importances_'):
+            churn_probabilities = self.churn_model.predict_proba(X)[:, 1]
+            return churn_probabilities
+        else:
+            # Return rule-based probability if model not trained
+            return health_features['health_score'].apply(
+                lambda x: 1 - (x / 100)  # Higher health = lower churn probability
+            )
+    
+    def identify_expansion_opportunities(self, customer_data, usage_data):
+        """Identify customers ready for plan upgrades or add-ons"""
+        opportunities = []
+        
+        for customer_id in customer_data['customer_id'].unique():
+            customer = customer_data[customer_data['customer_id'] == customer_id].iloc[0]
+            usage = usage_data[usage_data['customer_id'] == customer_id]
+            
+            current_date = datetime.now()
+            usage_30d = usage[usage['date'] >= current_date - timedelta(days=30)]
+            
+            if len(usage_30d) == 0:
+                continue
+                
+            # Calculate usage metrics
+            avg_api_calls = usage_30d['api_calls'].mean()
+            avg_storage_gb = usage_30d['storage_used_gb'].mean()
+            avg_users = usage_30d['active_users'].mean()
+            
+            # Current plan limits
+            api_limit = customer['api_limit']
+            storage_limit = customer['storage_limit_gb']
+            user_limit = customer['user_limit']
+            
+            # Identify opportunities
+            opportunity_score = 0
+            recommendations = []
+            
+            # API usage approaching limit
+            if avg_api_calls > api_limit * 0.8:
+                opportunity_score += 30
+                recommendations.append(f'API upgrade (using {avg_api_calls:.0f}/{api_limit} calls)')
+            
+            # Storage approaching limit
+            if avg_storage_gb > storage_limit * 0.8:
+                opportunity_score += 25
+                recommendations.append(f'Storage upgrade (using {avg_storage_gb:.1f}/{storage_limit} GB)')
+            
+            # User count approaching limit
+            if avg_users > user_limit * 0.8:
+                opportunity_score += 20
+                recommendations.append(f'User seat expansion (using {avg_users:.0f}/{user_limit} seats)')
+            
+            # High engagement indicates readiness for premium features
+            feature_usage_rate = usage_30d['features_used'].nunique() / 25  # 25 total features
+            if feature_usage_rate > 0.7 and customer['plan_tier'] == 'basic':
+                opportunity_score += 25
+                recommendations.append('Premium feature upgrade (high feature adoption)')
+            
+            if opportunity_score > 20:  # Threshold for viable opportunity
+                opportunities.append({
+                    'customer_id': customer_id,
+                    'customer_name': customer['company_name'],
+                    'current_mrr': customer['mrr'],
+                    'opportunity_score': opportunity_score,
+                    'recommendations': recommendations,
+                    'estimated_expansion_mrr': self.estimate_expansion_value(customer, recommendations)
+                })
+        
+        return pd.DataFrame(opportunities)
+    
+    def estimate_expansion_value(self, customer, recommendations):
+        """Estimate potential expansion revenue"""
+        base_mrr = customer['mrr']
+        expansion_value = 0
+        
+        for rec in recommendations:
+            if 'API upgrade' in rec:
+                expansion_value += base_mrr * 0.3  # 30% increase for API upgrade
+            elif 'Storage upgrade' in rec:
+                expansion_value += base_mrr * 0.2  # 20% increase for storage
+            elif 'User seat' in rec:
+                expansion_value += base_mrr * 0.4  # 40% increase for user expansion
+            elif 'Premium feature' in rec:
+                expansion_value += base_mrr * 0.5  # 50% increase for premium tier
+        
+        return min(expansion_value, base_mrr * 1.5)  # Cap at 150% of current MRR</pre>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Revenue Growth Analytics</h3>
+                        <div class="code-block">
+                            <pre># Comprehensive revenue and growth analytics
+from datetime import datetime, timedelta
+import pandas as pd
+import numpy as np
+
+class RevenueGrowthAnalytics:
+    def __init__(self):
+        self.cohort_data = {}
+        self.growth_metrics = {}
+        
+    def calculate_saas_metrics(self, customer_data, billing_data, churn_data):
+        """Calculate comprehensive SaaS growth metrics"""
+        current_date = datetime.now()
+        
+        # Monthly Recurring Revenue (MRR)
+        active_customers = customer_data[customer_data['status'] == 'active']
+        current_mrr = active_customers['mrr'].sum()
+        
+        # Calculate MRR growth
+        mrr_history = self.calculate_mrr_history(billing_data)
+        mrr_growth_rate = self.calculate_growth_rate(mrr_history, 'mrr')
+        
+        # Annual Recurring Revenue (ARR)
+        current_arr = current_mrr * 12
+        
+        # Customer metrics
+        total_customers = len(active_customers)
+        new_customers_30d = len(customer_data[
+            (customer_data['start_date'] >= current_date - timedelta(days=30)) &
+            (customer_data['status'] == 'active')
+        ])
+        
+        # Churn metrics
+        churned_30d = len(churn_data[
+            churn_data['churn_date'] >= current_date - timedelta(days=30)
+        ])
+        
+        customer_churn_rate = churned_30d / total_customers if total_customers > 0 else 0
+        
+        # Revenue churn
+        churned_mrr_30d = churn_data[
+            churn_data['churn_date'] >= current_date - timedelta(days=30)
+        ]['mrr_lost'].sum()
+        
+        revenue_churn_rate = churned_mrr_30d / current_mrr if current_mrr > 0 else 0
+        
+        # Average Revenue Per User (ARPU)
+        arpu = current_mrr / total_customers if total_customers > 0 else 0
+        
+        # Customer Acquisition Cost (CAC) - simplified calculation
+        # In real scenario, this would include marketing and sales costs
+        total_acquisition_cost = 150000  # Monthly marketing/sales spend
+        cac = total_acquisition_cost / new_customers_30d if new_customers_30d > 0 else 0
+        
+        # Customer Lifetime Value (LTV)
+        avg_customer_lifespan = 1 / customer_churn_rate if customer_churn_rate > 0 else 36  # months
+        ltv = arpu * avg_customer_lifespan
+        
+        # LTV:CAC ratio
+        ltv_cac_ratio = ltv / cac if cac > 0 else 0
+        
+        # Net Revenue Retention (NRR)
+        nrr = self.calculate_net_revenue_retention(customer_data, billing_data)
+        
+        # Gross Revenue Retention (GRR)
+        grr = 1 - revenue_churn_rate
+        
+        return {
+            'current_mrr': current_mrr,
+            'current_arr': current_arr,
+            'mrr_growth_rate': mrr_growth_rate,
+            'total_customers': total_customers,
+            'new_customers_30d': new_customers_30d,
+            'customer_churn_rate': customer_churn_rate,
+            'revenue_churn_rate': revenue_churn_rate,
+            'arpu': arpu,
+            'cac': cac,
+            'ltv': ltv,
+            'ltv_cac_ratio': ltv_cac_ratio,
+            'net_revenue_retention': nrr,
+            'gross_revenue_retention': grr
+        }
+    
+    def calculate_cohort_analysis(self, customer_data, billing_data):
+        """Perform cohort analysis for retention insights"""
+        # Create cohort table
+        customer_data['start_month'] = pd.to_datetime(customer_data['start_date']).dt.to_period('M')
+        
+        cohort_table = []
+        
+        for cohort_month in customer_data['start_month'].unique():
+            cohort_customers = customer_data[customer_data['start_month'] == cohort_month]
+            cohort_size = len(cohort_customers)
+            
+            # Calculate retention for each subsequent month
+            for period in range(0, 25):  # 24 months of retention
+                target_month = cohort_month + period
+                
+                # Count active customers in target month
+                active_in_month = 0
+                revenue_in_month = 0
+                
+                for customer_id in cohort_customers['customer_id']:
+                    customer_billing = billing_data[
+                        (billing_data['customer_id'] == customer_id) &
+                        (pd.to_datetime(billing_data['billing_month']).dt.to_period('M') == target_month)
+                    ]
+                    
+                    if len(customer_billing) > 0:
+                        active_in_month += 1
+                        revenue_in_month += customer_billing['mrr'].iloc[0]
+                
+                retention_rate = active_in_month / cohort_size if cohort_size > 0 else 0
+                revenue_retention = revenue_in_month / cohort_customers['mrr'].sum() if cohort_customers['mrr'].sum() > 0 else 0
+                
+                cohort_table.append({
+                    'cohort_month': str(cohort_month),
+                    'period': period,
+                    'cohort_size': cohort_size,
+                    'active_customers': active_in_month,
+                    'retention_rate': retention_rate,
+                    'revenue_retention': revenue_retention
+                })
+        
+        return pd.DataFrame(cohort_table)
+    
+    def calculate_expansion_metrics(self, customer_data, billing_data):
+        """Calculate expansion revenue metrics"""
+        expansion_data = []
+        
+        for customer_id in customer_data['customer_id'].unique():
+            customer_billing = billing_data[
+                billing_data['customer_id'] == customer_id
+            ].sort_values('billing_date')
+            
+            if len(customer_billing) < 2:
+                continue
+                
+            # Calculate month-over-month changes
+            customer_billing['mrr_change'] = customer_billing['mrr'].diff()
+            customer_billing['expansion'] = customer_billing['mrr_change'].apply(
+                lambda x: x if x > 0 else 0
+            )
+            customer_billing['contraction'] = customer_billing['mrr_change'].apply(
+                lambda x: abs(x) if x < 0 else 0
+            )
+            
+            total_expansion = customer_billing['expansion'].sum()
+            total_contraction = customer_billing['contraction'].sum()
+            
+            expansion_data.append({
+                'customer_id': customer_id,
+                'total_expansion': total_expansion,
+                'total_contraction': total_contraction,
+                'net_expansion': total_expansion - total_contraction,
+                'expansion_rate': total_expansion / customer_billing['mrr'].iloc[0] if customer_billing['mrr'].iloc[0] > 0 else 0
+            })
+        
+        expansion_df = pd.DataFrame(expansion_data)
+        
+        # Calculate aggregate metrics
+        total_expansion_revenue = expansion_df['total_expansion'].sum()
+        total_contraction_revenue = expansion_df['total_contraction'].sum()
+        net_expansion_revenue = expansion_df['net_expansion'].sum()
+        
+        # Expansion rate by customer segment
+        expansion_by_segment = customer_data.merge(
+            expansion_df, on='customer_id'
+        ).groupby('plan_tier').agg({
+            'total_expansion': 'sum',
+            'total_contraction': 'sum',
+            'net_expansion': 'sum'
+        })
+        
+        return {
+            'total_expansion_revenue': total_expansion_revenue,
+            'total_contraction_revenue': total_contraction_revenue,
+            'net_expansion_revenue': net_expansion_revenue,
+            'expansion_by_segment': expansion_by_segment
+        }
+    
+    def calculate_net_revenue_retention(self, customer_data, billing_data):
+        """Calculate Net Revenue Retention (NRR)"""
+        # Get customers from 12 months ago
+        twelve_months_ago = datetime.now() - timedelta(days=365)
+        cohort_customers = customer_data[
+            customer_data['start_date'] <= twelve_months_ago
+        ]
+        
+        if len(cohort_customers) == 0:
+            return 1.0  # No data available
+            
+        # Starting MRR 12 months ago
+        starting_mrr = cohort_customers['mrr'].sum()
+        
+        # Current MRR from same cohort (including expansions, excluding churned)
+        current_mrr = 0
+        for customer_id in cohort_customers['customer_id']:
+            current_customer = customer_data[
+                (customer_data['customer_id'] == customer_id) &
+                (customer_data['status'] == 'active')
+            ]
+            if len(current_customer) > 0:
+                current_mrr += current_customer['mrr'].iloc[0]
+        
+        nrr = current_mrr / starting_mrr if starting_mrr > 0 else 0
+        return nrr</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h3>Technology Stack</h3>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                        <span class="tech-badge">XGBoost</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">Tableau</span>
+                        <span class="tech-badge">Apache Airflow</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section">
+                <h2>Business Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Churn Reduction</h3>
+                        <div class="result-chart">
+                            <canvas id="churnChart" width="300" height="200"></canvas>
+                        </div>
+                        <p>Reduced annual churn from 18% to 10.3% through predictive analytics and proactive customer
+                            success.</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>Revenue Growth</h3>
+                        <div class="result-chart">
+                            <canvas id="revenueChart" width="300" height="200"></canvas>
+                        </div>
+                        <p>Achieved 67% increase in expansion revenue through systematic upselling and cross-selling.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="roi-breakdown">
+                    <h3>Financial Impact Analysis</h3>
+                    <div class="roi-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Impact Category</th>
+                                    <th>Annual Benefit</th>
+                                    <th>Calculation Method</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Churn Reduction</td>
+                                    <td>$1,850,000</td>
+                                    <td>Prevented churn × average customer LTV</td>
+                                </tr>
+                                <tr>
+                                    <td>Expansion Revenue</td>
+                                    <td>$1,680,000</td>
+                                    <td>Upsells + cross-sells identified by analytics</td>
+                                </tr>
+                                <tr>
+                                    <td>Customer Success Efficiency</td>
+                                    <td>$420,000</td>
+                                    <td>Reduced support costs + improved team productivity</td>
+                                </tr>
+                                <tr>
+                                    <td>Sales Optimization</td>
+                                    <td>$280,000</td>
+                                    <td>Improved lead scoring + account prioritization</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Total Annual Benefit</strong></td>
+                                    <td><strong>$4,230,000</strong></td>
+                                    <td><strong>ROI: 45,870%</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="strategic-insights">
+                    <h3>Strategic Business Insights</h3>
+                    <div class="insights-grid">
+                        <div class="insight-item">
+                            <h4>Customer Segmentation</h4>
+                            <ul>
+                                <li>Enterprise customers (12%) generate 58% of revenue</li>
+                                <li>Mid-market segment shows highest expansion potential</li>
+                                <li>SMB customers have 3x higher churn risk</li>
+                                <li>Usage-based pricing increases retention by 34%</li>
+                            </ul>
+                        </div>
+                        <div class="insight-item">
+                            <h4>Growth Optimization</h4>
+                            <ul>
+                                <li>Net Revenue Retention improved to 118%</li>
+                                <li>Customer health scoring accuracy at 89%</li>
+                                <li>Expansion opportunity identification up 156%</li>
+                                <li>Customer success team efficiency up 67%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Client Testimonial -->
+            <section class="testimonial-section">
+                <div class="testimonial">
+                    <blockquote>
+                        "The growth analytics platform revolutionized our customer success strategy. We now predict
+                        churn before it happens and identify expansion opportunities we never knew existed. The ROI has
+                        been extraordinary."
+                    </blockquote>
+                    <cite>— Jennifer Chen, VP of Customer Success, CloudTech Solutions</cite>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Accelerate Your SaaS Growth?</h2>
+                    <p>Build predictive analytics platform to reduce churn, increase expansion revenue, and optimize
+                        customer success operations.</p>
+                    <div class="cta-buttons">
+                        <a href="../contact.html" class="btn btn-primary">Get Growth Assessment</a>
+                        <a href="../services.html" class="btn btn-secondary">View Analytics Services</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataStrategy Pro</h3>
+                    <p>Transforming business data into strategic intelligence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html">Data Foundation</a></li>
+                        <li><a href="../services.html">ML Enhancement</a></li>
+                        <li><a href="../services.html">Strategic BI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: ibraheemraouf685@gmail.com</p>
+                    <p>Phone: +92 315 3387878</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DataStrategy Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Churn Reduction Chart
+        const churnCtx = document.getElementById('churnChart').getContext('2d');
+        new Chart(churnCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Before Analytics Platform',
+                    data: [18.2, 17.9, 18.5, 18.1, 17.8, 18.3, 18.0, 18.4, 17.7, 18.2, 18.1, 17.9],
+                    borderColor: '#ef4444',
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    tension: 0.4
+                }, {
+                    label: 'After Analytics Platform',
+                    data: [18.0, 16.8, 15.2, 13.9, 12.1, 11.5, 10.8, 10.3, 10.1, 10.4, 10.2, 10.3],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 8,
+                        max: 20,
+                        ticks: {
+                            callback: function (value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Revenue Growth Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Expansion Revenue', 'New Customer Revenue', 'Base Revenue Growth', 'Churn Prevention'],
+                datasets: [{
+                    label: 'Before ($M)',
+                    data: [0.8, 2.1, 1.2, 0],
+                    backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                    borderColor: '#ef4444',
+                    borderWidth: 1
+                }, {
+                    label: 'After ($M)',
+                    data: [2.5, 2.8, 1.8, 1.9],
+                    backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                    borderColor: '#10b981',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 3,
+                        ticks: {
+                            callback: function (value) {
+                                return '$' + value + 'M';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

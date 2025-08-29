@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2C: Healthcare Data Integration | DataPro Analytics</title>
+    <meta name="description"
+        content="Healthcare Data Integration solution addressing fragmentation across EMR systems, reducing $2.1M annual costs and 15% medication errors.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-detail-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-detail-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .project-content {
+            padding: 80px 0;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .challenge-card {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .challenge-card h4 {
+            color: #dc2626;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .solution-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .solution-card h4 {
+            color: #16a34a;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .tech-details {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-category {
+            margin-bottom: 2rem;
+        }
+
+        .tech-category h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .results-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .before-results,
+        .after-results {
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .before-results {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .after-results {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .before-results h3 {
+            color: #dc2626;
+            margin-bottom: 1.5rem;
+        }
+
+        .after-results h3 {
+            color: #16a34a;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-item {
+            margin-bottom: 1rem;
+        }
+
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .result-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: #1e40af;
+            transform: translateX(-4px);
+        }
+
+        .demo-section {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .demo-button {
+            background: #10b981;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-button:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .healthcare-highlight {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .healthcare-highlight h4 {
+            color: #0369a1;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .compliance-badge {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #92400e;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .results-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">DataPro Analytics</span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../services.html" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../case-studies/ecommerce-marketplace.html" class="nav-link">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Project Detail Hero -->
+    <section class="project-detail-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / Healthcare Data Integration
+            </div>
+            <h1 class="project-title">Healthcare Data Integration Solution</h1>
+            <p class="project-subtitle">Addressing data fragmentation across EMR systems, reducing $2.1M annual costs
+                and 15% medication errors</p>
+
+            <div class="project-metrics">
+                <div class="metric-card">
+                    <span class="metric-value">$2.1M</span>
+                    <span class="metric-label">Annual Cost Reduction</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">15%</span>
+                    <span class="metric-label">Medication Error Reduction</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">7</span>
+                    <span class="metric-label">EMR Systems Integrated</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">HIPAA</span>
+                    <span class="metric-label">Compliant</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+            <a href="../projects.html" class="back-button">
+                ← Back to Projects
+            </a>
+
+            <!-- Project Overview -->
+            <div class="content-section">
+                <h2 class="section-title">🎯 Project Overview</h2>
+                <p>This comprehensive healthcare data integration solution addressed critical data fragmentation issues
+                    across multiple Electronic Medical Record (EMR) systems. The project tackled inconsistent data
+                    formats, regulatory compliance challenges, and operational inefficiencies that were costing the
+                    healthcare organization $2.1 million annually in duplicate testing and contributing to 15%
+                    medication errors.</p>
+            </div>
+
+            <!-- Healthcare & Compliance Highlight -->
+            <div class="content-section">
+                <div class="healthcare-highlight">
+                    <h4>🏥 Healthcare Data Excellence</h4>
+                    <p>This project represents a critical healthcare transformation, ensuring patient safety through
+                        unified data systems, regulatory compliance, and operational efficiency. The solution addresses
+                        the unique challenges of healthcare data management while maintaining the highest standards of
+                        privacy and security.</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="compliance-badge">HIPAA Compliant</span>
+                        <span class="compliance-badge">HL7 FHIR</span>
+                        <span class="compliance-badge">SOC 2 Type II</span>
+                        <span class="compliance-badge">FDA 21 CFR Part 11</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Challenges -->
+            <div class="content-section">
+                <h2 class="section-title">⚠️ Business Challenges</h2>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h4>🏥 Data Fragmentation</h4>
+                        <p>Patient data scattered across 7 different EMR systems, preventing comprehensive care
+                            coordination and clinical decision-making.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>📊 Inconsistent Formats</h4>
+                        <p>Multiple data formats and standards across systems creating integration challenges and data
+                            quality issues.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>⚖️ Regulatory Compliance</h4>
+                        <p>Complex HIPAA, HL7 FHIR, and other healthcare regulatory requirements demanding strict data
+                            governance and security.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>💰 Financial Impact</h4>
+                        <p>$2.1M annual cost from duplicate testing, inefficient workflows, and operational redundancies
+                            across departments.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>💊 Medication Errors</h4>
+                        <p>15% medication error rate due to incomplete patient history and lack of real-time drug
+                            interaction checking.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>🔒 Security Concerns</h4>
+                        <p>Multiple access points and data silos creating security vulnerabilities and audit trail
+                            complexities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Solutions -->
+            <div class="content-section">
+                <h2 class="section-title">🛠️ Technical Solutions</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>🔗 Unified Data Platform</h4>
+                        <p>Comprehensive integration platform connecting all 7 EMR systems with real-time data
+                            synchronization and standardization.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📋 HL7 FHIR Implementation</h4>
+                        <p>Industry-standard healthcare data exchange protocol ensuring interoperability and regulatory
+                            compliance.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🛡️ Advanced Security Framework</h4>
+                        <p>Multi-layered security with encryption, access controls, audit trails, and HIPAA-compliant
+                            data handling.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📊 Real-time Analytics</h4>
+                        <p>Clinical decision support system with real-time patient insights, drug interaction alerts,
+                            and care coordination tools.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Demo Section -->
+            <div class="content-section">
+                <h2 class="section-title">🚀 Live Demo</h2>
+                <div class="demo-section">
+                    <h4>Interactive Healthcare Data Integration Platform</h4>
+                    <p>Experience the unified patient data management and clinical decision support capabilities:</p>
+                    <button class="demo-button" onclick="runDemo('patient-unification')">Patient Data
+                        Unification</button>
+                    <button class="demo-button" onclick="runDemo('clinical-decision')">Clinical Decision
+                        Support</button>
+                    <button class="demo-button" onclick="runDemo('compliance-monitoring')">Compliance
+                        Monitoring</button>
+                    <button class="demo-button" onclick="runDemo('integration-dashboard')">Integration
+                        Dashboard</button>
+                    <div id="demo-output"
+                        style="margin-top: 2rem; padding: 1rem; background: white; border-radius: 8px; min-height: 100px; border: 1px solid #e5e7eb;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="content-section">
+                <h2 class="section-title">💻 Technology Stack</h2>
+                <div class="tech-details">
+                    <div class="tech-category">
+                        <h4>Healthcare Standards</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">HL7 FHIR R4</span>
+                            <span class="tech-item">DICOM</span>
+                            <span class="tech-item">ICD-10</span>
+                            <span class="tech-item">SNOMED CT</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Integration & ETL</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Python 3.9+</span>
+                            <span class="tech-item">Apache Airflow</span>
+                            <span class="tech-item">Pandas</span>
+                            <span class="tech-item">Great Expectations</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Security & Compliance</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">AES-256 Encryption</span>
+                            <span class="tech-item">OAuth 2.0</span>
+                            <span class="tech-item">RBAC</span>
+                            <span class="tech-item">Audit Logging</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Database & Analytics</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">PostgreSQL</span>
+                            <span class="tech-item">MongoDB</span>
+                            <span class="tech-item">Elasticsearch</span>
+                            <span class="tech-item">Tableau</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Comparison -->
+            <div class="content-section">
+                <h2 class="section-title">📊 Before vs After Results</h2>
+                <div class="results-comparison">
+                    <div class="before-results">
+                        <h3>❌ Before Implementation</h3>
+                        <div class="result-item">
+                            <span class="result-value">7</span>
+                            <span class="result-description">Fragmented EMR Systems</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">$2.1M</span>
+                            <span class="result-description">Annual Duplicate Testing Costs</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">15%</span>
+                            <span class="result-description">Medication Error Rate</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Manual</span>
+                            <span class="result-description">Data Reconciliation</span>
+                        </div>
+                    </div>
+                    <div class="after-results">
+                        <h3>✅ After Implementation</h3>
+                        <div class="result-item">
+                            <span class="result-value">1</span>
+                            <span class="result-description">Unified Data Platform</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">$0.3M</span>
+                            <span class="result-description">Reduced Testing Costs</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">2%</span>
+                            <span class="result-description">Medication Error Rate</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Real-time</span>
+                            <span class="result-description">Data Synchronization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Impact -->
+            <div class="content-section">
+                <h2 class="section-title">💼 Business Impact</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>💰 Cost Reduction</h4>
+                        <p><strong>$1.8M annual savings</strong> through elimination of duplicate testing and
+                            streamlined workflows across departments.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🏥 Patient Safety</h4>
+                        <p><strong>87% reduction in medication errors</strong> through comprehensive patient history and
+                            real-time drug interaction alerts.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>⚖️ Regulatory Compliance</h4>
+                        <p><strong>100% HIPAA compliance</strong> with HL7 FHIR standards and comprehensive audit trails
+                            for regulatory reporting.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🔗 System Integration</h4>
+                        <p><strong>7 EMR systems unified</strong> with real-time data synchronization and standardized
+                            healthcare data exchange.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataPro Analytics</h3>
+                    <p>Transforming businesses through advanced data science and analytics solutions.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html#foundation">Data Foundation</a></li>
+                        <li><a href="../services.html#ml-enhancement">ML Enhancement</a></li>
+                        <li><a href="../services.html#strategic-bi">Strategic BI</a></li>
+                        <li><a href="../services.html#transformation">Complete Transformation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Projects</h4>
+                    <ul>
+                        <li><a href="../projects.html">All Projects</a></li>
+                        <li><a href="../case-studies/ecommerce-marketplace.html">Case Studies</a></li>
+                        <li><a href="../case-studies/regional-bank.html">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: ibraheemraouf685@gmail.com.com</p>
+                    <p>Phone: +92 315 3387878</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 DataPro Analytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function runDemo(demoType) {
+            const output = document.getElementById('demo-output');
+
+            switch (demoType) {
+                case 'patient-unification':
+                    output.innerHTML = `
+                        <h5>🏥 Patient Data Unification Demo</h5>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div style="background: #fef2f2; padding: 1rem; border-radius: 8px;">
+                                <strong>Before Integration:</strong><br>
+                                • EMR System A: Basic demographics<br>
+                                • EMR System B: Lab results only<br>
+                                • EMR System C: Medication history<br>
+                                • EMR System D: Imaging reports<br>
+                                <span style="color: #dc2626; font-weight: 600;">❌ Fragmented patient view</span>
+                            </div>
+                            <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px;">
+                                <strong>After Integration:</strong><br>
+                                • Complete patient profile<br>
+                                • Real-time data synchronization<br>
+                                • Comprehensive medical history<br>
+                                • Unified clinical timeline<br>
+                                <span style="color: #16a34a; font-weight: 600;">✅ 360° patient view</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1rem; color: #16a34a; font-weight: 600;">✅ Patient John Doe: All 7 EMR systems synchronized successfully</p>
+                    `;
+                    break;
+                case 'clinical-decision':
+                    output.innerHTML = `
+                        <h5>🩺 Clinical Decision Support Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>Patient: Sarah Johnson (Age 65, Diabetes Type 2)</strong>
+                                <div style="margin-top: 1rem;">
+                                    <div style="background: #fef2f2; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                                        <strong>🚨 Drug Interaction Alert:</strong><br>
+                                        Prescribed: Warfarin + Aspirin<br>
+                                        Risk: Increased bleeding risk<br>
+                                        Recommendation: Consider alternative anticoagulant
+                                    </div>
+                                    <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                                        <strong>📊 Clinical Insights:</strong><br>
+                                        • HbA1c trending upward (7.2% → 8.1%)<br>
+                                        • Blood pressure elevated (145/92)<br>
+                                        • Last eye exam: 14 months ago<br>
+                                        • Recommended: Ophthalmology referral
+                                    </div>
+                                    <div style="background: #fef3c7; padding: 1rem; border-radius: 8px;">
+                                        <strong>⚠️ Care Gaps Identified:</strong><br>
+                                        • Annual diabetic foot exam overdue<br>
+                                        • Flu vaccination needed<br>
+                                        • Mammography screening due
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #dc2626; font-weight: 600;">🚨 3 clinical alerts generated - immediate physician notification sent</p>
+                    `;
+                    break;
+                case 'compliance-monitoring':
+                    output.innerHTML = `
+                        <h5>⚖️ Compliance Monitoring Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>HIPAA Compliance Dashboard:</strong>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">100%</div>
+                                        <div style="font-size: 0.9rem;">Data Encryption</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">2,847</div>
+                                        <div style="font-size: 0.9rem;">Audit Log Entries</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">0</div>
+                                        <div style="font-size: 0.9rem;">Security Violations</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">24/7</div>
+                                        <div style="font-size: 0.9rem;">Monitoring</div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 1rem; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+                                    <strong>Recent Compliance Activities:</strong><br>
+                                    • ✅ Daily backup verification completed<br>
+                                    • ✅ Access control review passed<br>
+                                    • ✅ Data retention policy enforced<br>
+                                    • ✅ Staff training compliance: 98%
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #16a34a; font-weight: 600;">✅ All compliance requirements met - ready for audit</p>
+                    `;
+                    break;
+                case 'integration-dashboard':
+                    output.innerHTML = `
+                        <h5>📊 Integration Dashboard Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>EMR System Integration Status:</strong>
+                                <div style="margin-top: 1rem;">
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Epic EMR</span>
+                                            <span style="font-weight: bold; color: #16a34a;">✅ Online</span>
+                                        </div>
+                                        <div style="background: #e5e7eb; border-radius: 10px; height: 8px;">
+                                            <div style="background: #16a34a; height: 8px; border-radius: 10px; width: 98%;"></div>
+                                        </div>
+                                        <div style="font-size: 0.8rem; color: #6b7280;">Last sync: 2 minutes ago</div>
+                                    </div>
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Cerner EMR</span>
+                                            <span style="font-weight: bold; color: #16a34a;">✅ Online</span>
+                                        </div>
+                                        <div style="background: #e5e7eb; border-radius: 10px; height: 8px;">
+                                            <div style="background: #16a34a; height: 8px; border-radius: 10px; width: 95%;"></div>
+                                        </div>
+                                        <div style="font-size: 0.8rem; color: #6b7280;">Last sync: 1 minute ago</div>
+                                    </div>
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Allscripts EMR</span>
+                                            <span style="font-weight: bold; color: #f59e0b;">⚠️ Syncing</span>
+                                        </div>
+                                        <div style="background: #e5e7eb; border-radius: 10px; height: 8px;">
+                                            <div style="background: #f59e0b; height: 8px; border-radius: 10px; width: 87%;"></div>
+                                        </div>
+                                        <div style="font-size: 0.8rem; color: #6b7280;">Sync in progress...</div>
+                                    </div>
+                                    <div style="text-align: center; margin-top: 1rem; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">94.2%</div>
+                                        <div style="font-size: 0.9rem;">Overall Integration Health</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #16a34a; font-weight: 600;">✅ 6 of 7 EMR systems fully synchronized - 1 system syncing</p>
+                    `;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

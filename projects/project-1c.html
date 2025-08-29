@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1C: HR Payroll System Migration | DataPro Analytics</title>
+    <meta name="description"
+        content="Successful migration of 100,000 employee records with 100% data quality and significant ROI through advanced data engineering and privacy protection.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-detail-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-detail-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .project-content {
+            padding: 80px 0;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .challenge-card {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .challenge-card h4 {
+            color: #dc2626;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .solution-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .solution-card h4 {
+            color: #16a34a;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .tech-details {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-category {
+            margin-bottom: 2rem;
+        }
+
+        .tech-category h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .results-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .before-results,
+        .after-results {
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .before-results {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .after-results {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .before-results h3 {
+            color: #dc2626;
+            margin-bottom: 1.5rem;
+        }
+
+        .after-results h3 {
+            color: #16a34a;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-item {
+            margin-bottom: 1rem;
+        }
+
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .result-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: #1e40af;
+            transform: translateX(-4px);
+        }
+
+        .demo-section {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .demo-button {
+            background: #10b981;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-button:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .privacy-highlight {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .privacy-highlight h4 {
+            color: #1d4ed8;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .results-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">DataPro Analytics</span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../services.html" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../case-studies/ecommerce-marketplace.html" class="nav-link">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Project Detail Hero -->
+    <section class="project-detail-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / HR Payroll System Migration
+            </div>
+            <h1 class="project-title">HR Payroll System Migration</h1>
+            <p class="project-subtitle">Successful migration of 100,000 employee records with 100% data quality and
+                significant ROI</p>
+
+            <div class="project-metrics">
+                <div class="metric-card">
+                    <span class="metric-value">100K</span>
+                    <span class="metric-label">Employee Records</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">100%</span>
+                    <span class="metric-label">Data Quality</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">Zero</span>
+                    <span class="metric-label">Data Loss</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">High</span>
+                    <span class="metric-label">ROI Achieved</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+            <a href="../projects.html" class="back-button">
+                ← Back to Projects
+            </a>
+
+            <!-- Project Overview -->
+            <div class="content-section">
+                <h2 class="section-title">🎯 Project Overview</h2>
+                <p>This critical HR system migration project successfully transferred 100,000 employee records from
+                    legacy systems to a modern payroll platform. The initiative addressed complex data challenges
+                    including SSN privacy protection, currency standardization, date format evolution, department code
+                    drift, and scattered compensation data while achieving 100% data quality and zero data loss.</p>
+            </div>
+
+            <!-- Privacy & Security Highlight -->
+            <div class="content-section">
+                <div class="privacy-highlight">
+                    <h4>🔒 Privacy & Security First</h4>
+                    <p>This project implemented industry-leading privacy protection measures, including SSN encryption,
+                        PII anonymization, and GDPR-compliant data handling procedures. All sensitive employee data was
+                        processed with the highest security standards and regulatory compliance.</p>
+                </div>
+            </div>
+
+            <!-- Business Challenges -->
+            <div class="content-section">
+                <h2 class="section-title">⚠️ Business Challenges</h2>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h4>🔐 SSN Privacy Protection</h4>
+                        <p>Secure handling and migration of sensitive Social Security Numbers while maintaining data
+                            integrity and regulatory compliance.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>💱 Currency Inconsistencies</h4>
+                        <p>Multiple currency formats and historical exchange rates across different time periods and
+                            international employees.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>📅 Date Format Evolution</h4>
+                        <p>Inconsistent date formats accumulated over decades of system changes and different regional
+                            standards.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>🏢 Department Code Drift</h4>
+                        <p>Organizational restructuring over time created inconsistent department codes and reporting
+                            hierarchies.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>💰 Scattered Compensation Data</h4>
+                        <p>Employee compensation information spread across multiple systems with different calculation
+                            methods.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>⏰ Zero Downtime Requirement</h4>
+                        <p>Critical business requirement to maintain payroll operations without any service interruption
+                            during migration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Solutions -->
+            <div class="content-section">
+                <h2 class="section-title">🛠️ Technical Solutions</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>🔒 Advanced Encryption Pipeline</h4>
+                        <p>Implemented end-to-end encryption for SSN and PII data with secure key management and audit
+                            trails.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🔄 Intelligent Data Mapping</h4>
+                        <p>Created sophisticated mapping algorithms to handle currency conversion, date standardization,
+                            and department code reconciliation.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>✅ Multi-Layer Validation</h4>
+                        <p>Comprehensive validation framework with business rule checks, data integrity verification,
+                            and compliance auditing.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🔄 Incremental Migration Strategy</h4>
+                        <p>Phased migration approach with rollback capabilities and real-time synchronization to ensure
+                            zero downtime.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Demo Section -->
+            <div class="content-section">
+                <h2 class="section-title">🚀 Live Demo</h2>
+                <div class="demo-section">
+                    <h4>Interactive Migration Pipeline</h4>
+                    <p>Experience the data transformation process with anonymized sample data:</p>
+                    <button class="demo-button" onclick="runDemo('data-mapping')">Data Mapping Demo</button>
+                    <button class="demo-button" onclick="runDemo('validation')">Validation Demo</button>
+                    <button class="demo-button" onclick="runDemo('privacy')">Privacy Protection Demo</button>
+                    <button class="demo-button" onclick="runDemo('quality-metrics')">Quality Metrics Demo</button>
+                    <div id="demo-output"
+                        style="margin-top: 2rem; padding: 1rem; background: white; border-radius: 8px; min-height: 100px; border: 1px solid #e5e7eb;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="content-section">
+                <h2 class="section-title">💻 Technology Stack</h2>
+                <div class="tech-details">
+                    <div class="tech-category">
+                        <h4>Data Processing & ETL</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Python 3.9+</span>
+                            <span class="tech-item">Pandas</span>
+                            <span class="tech-item">NumPy</span>
+                            <span class="tech-item">Apache Airflow</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Security & Privacy</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">AES-256 Encryption</span>
+                            <span class="tech-item">PII Anonymization</span>
+                            <span class="tech-item">GDPR Compliance</span>
+                            <span class="tech-item">Secure Key Management</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Data Validation & Quality</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Great Expectations</span>
+                            <span class="tech-item">Data Profiling</span>
+                            <span class="tech-item">Business Rule Engine</span>
+                            <span class="tech-item">Automated Testing</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Migration & Monitoring</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Real-time Sync</span>
+                            <span class="tech-item">Rollback Capabilities</span>
+                            <span class="tech-item">Performance Monitoring</span>
+                            <span class="tech-item">Audit Logging</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Comparison -->
+            <div class="content-section">
+                <h2 class="section-title">📊 Before vs After Results</h2>
+                <div class="results-comparison">
+                    <div class="before-results">
+                        <h3>❌ Before Migration</h3>
+                        <div class="result-item">
+                            <span class="result-value">5</span>
+                            <span class="result-description">Legacy Systems</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">15</span>
+                            <span class="result-description">Different Date Formats</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">8 Hours</span>
+                            <span class="result-description">Manual Payroll Processing</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">High Risk</span>
+                            <span class="result-description">Data Security Concerns</span>
+                        </div>
+                    </div>
+                    <div class="after-results">
+                        <h3>✅ After Migration</h3>
+                        <div class="result-item">
+                            <span class="result-value">1</span>
+                            <span class="result-description">Unified Modern System</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">100%</span>
+                            <span class="result-description">Standardized Formats</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Automated</span>
+                            <span class="result-description">Real-time Processing</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Enterprise</span>
+                            <span class="result-description">Security Standards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Impact -->
+            <div class="content-section">
+                <h2 class="section-title">💼 Business Impact</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>💰 Significant ROI</h4>
+                        <p><strong>High ROI achieved</strong> through eliminated manual processing, reduced errors, and
+                            improved operational efficiency.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🔒 Enhanced Security</h4>
+                        <p><strong>Enterprise-grade security</strong> with encrypted PII handling, audit trails, and
+                            regulatory compliance.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>⚡ Operational Excellence</h4>
+                        <p><strong>Zero downtime migration</strong> with 100% data quality and automated payroll
+                            processing capabilities.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📈 Scalable Foundation</h4>
+                        <p><strong>Modern platform</strong> ready for future growth with standardized data formats and
+                            automated workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataPro Analytics</h3>
+                    <p>Transforming businesses through advanced data science and analytics solutions.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html#foundation">Data Foundation</a></li>
+                        <li><a href="../services.html#ml-enhancement">ML Enhancement</a></li>
+                        <li><a href="../services.html#strategic-bi">Strategic BI</a></li>
+                        <li><a href="../services.html#transformation">Complete Transformation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Projects</h4>
+                    <ul>
+                        <li><a href="../projects.html">All Projects</a></li>
+                        <li><a href="../case-studies/ecommerce-marketplace.html">Case Studies</a></li>
+                        <li><a href="../case-studies/regional-bank.html">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: ibraheemraouf685@gmail.com.com</p>
+                    <p>Phone: +92 315 3387878</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 DataPro Analytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function runDemo(demoType) {
+            const output = document.getElementById('demo-output');
+
+            switch (demoType) {
+                case 'data-mapping':
+                    output.innerHTML = `
+                        <h5>🗺️ Data Mapping Demo</h5>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div style="background: #fef2f2; padding: 1rem; border-radius: 8px;">
+                                <strong>Legacy Format:</strong><br>
+                                • EMP_ID: 12345<br>
+                                • DEPT: IT_DEPT_001<br>
+                                • SALARY: $75,000.00<br>
+                                • START_DT: 01/15/2020<br>
+                                • SSN: ***-**-1234
+                            </div>
+                            <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px;">
+                                <strong>Modern Format:</strong><br>
+                                • employee_id: 12345<br>
+                                • department_code: IT<br>
+                                • annual_salary: 75000.00<br>
+                                • start_date: 2020-01-15<br>
+                                • ssn_hash: [ENCRYPTED]
+                            </div>
+                        </div>
+                        <p style="margin-top: 1rem; color: #16a34a; font-weight: 600;">✅ 100% successful mapping with privacy protection</p>
+                    `;
+                    break;
+                case 'validation':
+                    output.innerHTML = `
+                        <h5>✅ Validation Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>Validation Checks:</strong>
+                                <div style="margin-top: 1rem;">
+                                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                        <span style="color: #16a34a; margin-right: 0.5rem;">✅</span>
+                                        <span>SSN Format Validation: 100,000/100,000 passed</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                        <span style="color: #16a34a; margin-right: 0.5rem;">✅</span>
+                                        <span>Date Range Validation: 100,000/100,000 passed</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                        <span style="color: #16a34a; margin-right: 0.5rem;">✅</span>
+                                        <span>Salary Range Validation: 100,000/100,000 passed</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                        <span style="color: #16a34a; margin-right: 0.5rem;">✅</span>
+                                        <span>Department Code Validation: 100,000/100,000 passed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #16a34a; font-weight: 600;">✅ 100% validation success rate across all data quality checks</p>
+                    `;
+                    break;
+                case 'privacy':
+                    output.innerHTML = `
+                        <h5>🔒 Privacy Protection Demo</h5>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div style="background: #fef2f2; padding: 1rem; border-radius: 8px;">
+                                <strong>Original Data:</strong><br>
+                                • SSN: 123-45-6789<br>
+                                • Name: John Smith<br>
+                                • Address: 123 Main St<br>
+                                • Phone: (555) 123-4567
+                            </div>
+                            <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px;">
+                                <strong>Protected Data:</strong><br>
+                                • SSN: [AES-256 ENCRYPTED]<br>
+                                • Name: [HASHED_ID_7891]<br>
+                                • Address: [ANONYMIZED]<br>
+                                • Phone: [MASKED]
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #eff6ff; border-radius: 8px;">
+                            <strong>🛡️ Security Measures:</strong><br>
+                            • AES-256 encryption for all PII<br>
+                            • GDPR-compliant data handling<br>
+                            • Secure key management<br>
+                            • Complete audit trail
+                        </div>
+                        <p style="margin-top: 1rem; color: #16a34a; font-weight: 600;">✅ Enterprise-grade privacy protection implemented</p>
+                    `;
+                    break;
+                case 'quality-metrics':
+                    output.innerHTML = `
+                        <h5>📊 Quality Metrics Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>Migration Quality Dashboard:</strong>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">100%</div>
+                                        <div style="font-size: 0.9rem;">Data Completeness</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">100%</div>
+                                        <div style="font-size: 0.9rem;">Data Accuracy</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">0</div>
+                                        <div style="font-size: 0.9rem;">Data Loss</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">0</div>
+                                        <div style="font-size: 0.9rem;">Downtime</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #16a34a; font-weight: 600;">✅ Perfect migration with zero data loss and 100% quality</p>
+                    `;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

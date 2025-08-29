@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://datastrategy-pro.com/sitemap.xml
+
+# Disallow crawling of admin or private directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.pdf$
+
+# Allow crawling of CSS and JS files for better rendering
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1

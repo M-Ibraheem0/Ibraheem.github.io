@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2B: Manufacturing Analytics & Predictive Maintenance | DataPro Analytics</title>
+    <meta name="description"
+        content="Advanced Manufacturing Analytics Platform processing 4M+ sensor readings with 86.7% system performance and 190-710% ROI through predictive maintenance.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-detail-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-detail-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .project-content {
+            padding: 80px 0;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .challenge-card {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .challenge-card h4 {
+            color: #dc2626;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .solution-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .solution-card h4 {
+            color: #16a34a;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .tech-details {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-category {
+            margin-bottom: 2rem;
+        }
+
+        .tech-category h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .results-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .before-results,
+        .after-results {
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .before-results {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .after-results {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .before-results h3 {
+            color: #dc2626;
+            margin-bottom: 1.5rem;
+        }
+
+        .after-results h3 {
+            color: #16a34a;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-item {
+            margin-bottom: 1rem;
+        }
+
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .result-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: #1e40af;
+            transform: translateX(-4px);
+        }
+
+        .demo-section {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .demo-button {
+            background: #10b981;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-button:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .iot-highlight {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .iot-highlight h4 {
+            color: #0369a1;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .results-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">DataPro Analytics</span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../services.html" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../case-studies/ecommerce-marketplace.html" class="nav-link">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Project Detail Hero -->
+    <section class="project-detail-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / Manufacturing Analytics
+                Platform
+            </div>
+            <h1 class="project-title">Manufacturing Analytics & Predictive Maintenance</h1>
+            <p class="project-subtitle">Advanced platform processing 4M+ sensor readings with 86.7% system performance
+                and 190-710% ROI</p>
+
+            <div class="project-metrics">
+                <div class="metric-card">
+                    <span class="metric-value">4M+</span>
+                    <span class="metric-label">Sensor Readings</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">86.7%</span>
+                    <span class="metric-label">System Performance</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">190-710%</span>
+                    <span class="metric-label">ROI Range</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">Real-time</span>
+                    <span class="metric-label">Monitoring</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+            <a href="../projects.html" class="back-button">
+                ← Back to Projects
+            </a>
+
+            <!-- Project Overview -->
+            <div class="content-section">
+                <h2 class="section-title">🎯 Project Overview</h2>
+                <p>This cutting-edge manufacturing analytics platform revolutionized industrial operations through
+                    advanced IoT sensor integration, predictive maintenance algorithms, and real-time quality
+                    monitoring. Processing over 4 million sensor readings, the system achieved an exceptional 86.7%
+                    overall performance score while delivering ROI ranging from 190% to 710% in the first year of
+                    implementation.</p>
+            </div>
+
+            <!-- IoT & Industry 4.0 Highlight -->
+            <div class="content-section">
+                <div class="iot-highlight">
+                    <h4>🏭 Industry 4.0 Innovation</h4>
+                    <p>This project represents a comprehensive Industry 4.0 transformation, integrating IoT sensors,
+                        edge computing, machine learning, and real-time analytics to create a smart manufacturing
+                        ecosystem. The platform enables predictive maintenance, quality optimization, and operational
+                        excellence through data-driven insights.</p>
+                </div>
+            </div>
+
+            <!-- Business Challenges -->
+            <div class="content-section">
+                <h2 class="section-title">⚠️ Business Challenges</h2>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h4>🔧 Equipment Downtime</h4>
+                        <p>Unplanned equipment failures causing significant production losses and maintenance costs
+                            across multiple manufacturing lines.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>📊 Data Silos</h4>
+                        <p>Fragmented data across different systems preventing comprehensive analysis and real-time
+                            decision making.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>🎯 Quality Control</h4>
+                        <p>Inconsistent product quality due to lack of real-time monitoring and predictive quality
+                            management systems.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>⚡ Real-time Processing</h4>
+                        <p>Need for instant analysis of millions of sensor readings to enable immediate corrective
+                            actions and optimization.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>💰 Maintenance Costs</h4>
+                        <p>High reactive maintenance expenses and inefficient resource allocation due to lack of
+                            predictive insights.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>📈 Scalability Requirements</h4>
+                        <p>System must handle increasing sensor data volumes while maintaining performance across
+                            multiple production facilities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Solutions -->
+            <div class="content-section">
+                <h2 class="section-title">🛠️ Technical Solutions</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>🤖 Predictive Maintenance AI</h4>
+                        <p>Advanced machine learning models for equipment failure prediction, maintenance scheduling,
+                            and performance optimization.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📡 IoT Sensor Integration</h4>
+                        <p>Comprehensive sensor network collecting real-time data on temperature, vibration, pressure,
+                            and quality metrics.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>⚡ Real-time Analytics</h4>
+                        <p>High-performance streaming analytics processing millions of sensor readings with sub-second
+                            latency.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📊 Quality Scoring System</h4>
+                        <p>Intelligent quality assessment algorithms providing real-time product quality scores and
+                            defect prediction.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Demo Section -->
+            <div class="content-section">
+                <h2 class="section-title">🚀 Live Demo</h2>
+                <div class="demo-section">
+                    <h4>Interactive Manufacturing Analytics Platform</h4>
+                    <p>Experience the predictive maintenance and quality monitoring capabilities:</p>
+                    <button class="demo-button" onclick="runDemo('predictive-maintenance')">Predictive Maintenance
+                        Demo</button>
+                    <button class="demo-button" onclick="runDemo('sensor-monitoring')">Sensor Monitoring Demo</button>
+                    <button class="demo-button" onclick="runDemo('quality-scoring')">Quality Scoring Demo</button>
+                    <button class="demo-button" onclick="runDemo('performance-dashboard')">Performance Dashboard
+                        Demo</button>
+                    <div id="demo-output"
+                        style="margin-top: 2rem; padding: 1rem; background: white; border-radius: 8px; min-height: 100px; border: 1px solid #e5e7eb;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="content-section">
+                <h2 class="section-title">💻 Technology Stack</h2>
+                <div class="tech-details">
+                    <div class="tech-category">
+                        <h4>IoT & Sensor Integration</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Industrial IoT Sensors</span>
+                            <span class="tech-item">MQTT Protocol</span>
+                            <span class="tech-item">Edge Computing</span>
+                            <span class="tech-item">Time Series DB</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Machine Learning & AI</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Python 3.9+</span>
+                            <span class="tech-item">TensorFlow</span>
+                            <span class="tech-item">Scikit-learn</span>
+                            <span class="tech-item">Predictive Models</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Real-time Processing</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Apache Kafka</span>
+                            <span class="tech-item">Apache Spark</span>
+                            <span class="tech-item">Stream Processing</span>
+                            <span class="tech-item">Redis Cache</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Visualization & Monitoring</h4>
+                        <div class="tech-list">
+                            <span class="tech-item">Grafana</span>
+                            <span class="tech-item">Tableau</span>
+                            <span class="tech-item">Real-time Dashboards</span>
+                            <span class="tech-item">Alert Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Comparison -->
+            <div class="content-section">
+                <h2 class="section-title">📊 Before vs After Results</h2>
+                <div class="results-comparison">
+                    <div class="before-results">
+                        <h3>❌ Before Implementation</h3>
+                        <div class="result-item">
+                            <span class="result-value">Reactive</span>
+                            <span class="result-description">Maintenance Strategy</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">15%</span>
+                            <span class="result-description">Equipment Downtime</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Manual</span>
+                            <span class="result-description">Quality Inspection</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">High</span>
+                            <span class="result-description">Maintenance Costs</span>
+                        </div>
+                    </div>
+                    <div class="after-results">
+                        <h3>✅ After Implementation</h3>
+                        <div class="result-item">
+                            <span class="result-value">Predictive</span>
+                            <span class="result-description">AI-Driven Maintenance</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">3%</span>
+                            <span class="result-description">Equipment Downtime</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">Real-time</span>
+                            <span class="result-description">Quality Monitoring</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">86.7%</span>
+                            <span class="result-description">System Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Impact -->
+            <div class="content-section">
+                <h2 class="section-title">💼 Business Impact</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>💰 Exceptional ROI</h4>
+                        <p><strong>190-710% ROI</strong> achieved in the first year through reduced downtime, optimized
+                            maintenance, and improved quality.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🔧 Predictive Excellence</h4>
+                        <p><strong>4M+ sensor readings</strong> processed to enable predictive maintenance and prevent
+                            equipment failures.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>📈 Performance Optimization</h4>
+                        <p><strong>86.7% system performance</strong> with real-time monitoring and automated quality
+                            control systems.</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>🏭 Industry 4.0 Ready</h4>
+                        <p><strong>Smart manufacturing</strong> platform ready for future expansion with IoT integration
+                            and AI capabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataPro Analytics</h3>
+                    <p>Transforming businesses through advanced data science and analytics solutions.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html#foundation">Data Foundation</a></li>
+                        <li><a href="../services.html#ml-enhancement">ML Enhancement</a></li>
+                        <li><a href="../services.html#strategic-bi">Strategic BI</a></li>
+                        <li><a href="../services.html#transformation">Complete Transformation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Projects</h4>
+                    <ul>
+                        <li><a href="../projects.html">All Projects</a></li>
+                        <li><a href="../case-studies/ecommerce-marketplace.html">Case Studies</a></li>
+                        <li><a href="../case-studies/regional-bank.html">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: ibraheemraouf685@gmail.com.com</p>
+                    <p>Phone: +92 315 3387878</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 DataPro Analytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function runDemo(demoType) {
+            const output = document.getElementById('demo-output');
+
+            switch (demoType) {
+                case 'predictive-maintenance':
+                    output.innerHTML = `
+                        <h5>🔧 Predictive Maintenance Demo</h5>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div style="background: #fef2f2; padding: 1rem; border-radius: 8px;">
+                                <strong>Equipment Status:</strong><br>
+                                • Motor A: Vibration increasing<br>
+                                • Bearing B: Temperature rising<br>
+                                • Pump C: Pressure fluctuating<br>
+                                • Conveyor D: Normal operation
+                            </div>
+                            <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px;">
+                                <strong>AI Predictions:</strong><br>
+                                • Motor A: Failure in 72 hours<br>
+                                • Bearing B: Maintenance needed<br>
+                                • Pump C: Monitor closely<br>
+                                • Conveyor D: Optimal performance
+                            </div>
+                        </div>
+                        <p style="margin-top: 1rem; color: #dc2626; font-weight: 600;">🚨 Maintenance alert: Schedule Motor A replacement within 48 hours</p>
+                    `;
+                    break;
+                case 'sensor-monitoring':
+                    output.innerHTML = `
+                        <h5>📡 Sensor Monitoring Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>Real-time Sensor Data:</strong>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">72°C</div>
+                                        <div style="font-size: 0.9rem;">Temperature</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #fef2f2; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #dc2626;">8.2mm/s</div>
+                                        <div style="font-size: 0.9rem;">Vibration</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">2.1 bar</div>
+                                        <div style="font-size: 0.9rem;">Pressure</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">1,847 RPM</div>
+                                        <div style="font-size: 0.9rem;">Speed</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #f59e0b; font-weight: 600;">⚠️ Vibration levels approaching threshold - monitoring closely</p>
+                    `;
+                    break;
+                case 'quality-scoring':
+                    output.innerHTML = `
+                        <h5>🎯 Quality Scoring Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>Product Quality Assessment:</strong>
+                                <div style="margin-top: 1rem;">
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Dimensional Accuracy</span>
+                                            <span style="font-weight: bold; color: #16a34a;">94%</span>
+                                        </div>
+                                        <div style="background: #e5e7eb; border-radius: 10px; height: 8px;">
+                                            <div style="background: #16a34a; height: 8px; border-radius: 10px; width: 94%;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Surface Finish</span>
+                                            <span style="font-weight: bold; color: #16a34a;">91%</span>
+                                        </div>
+                                        <div style="background: #e5e7eb; border-radius: 10px; height: 8px;">
+                                            <div style="background: #16a34a; height: 8px; border-radius: 10px; width: 91%;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Material Integrity</span>
+                                            <span style="font-weight: bold; color: #16a34a;">96%</span>
+                                        </div>
+                                        <div style="background: #e5e7eb; border-radius: 10px; height: 8px;">
+                                            <div style="background: #16a34a; height: 8px; border-radius: 10px; width: 96%;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="text-align: center; margin-top: 1rem; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 2rem; font-weight: bold; color: #16a34a;">93.7/100</div>
+                                        <div style="font-size: 0.9rem;">Overall Quality Score</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #16a34a; font-weight: 600;">✅ Product meets quality standards - approved for shipment</p>
+                    `;
+                    break;
+                case 'performance-dashboard':
+                    output.innerHTML = `
+                        <h5>📊 Performance Dashboard Demo</h5>
+                        <div style="margin-top: 1rem;">
+                            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                                <strong>Manufacturing KPIs:</strong>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">97%</div>
+                                        <div style="font-size: 0.9rem;">Equipment Uptime</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">86.7%</div>
+                                        <div style="font-size: 0.9rem;">Overall Performance</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">2,847</div>
+                                        <div style="font-size: 0.9rem;">Units Produced</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #16a34a;">0.8%</div>
+                                        <div style="font-size: 0.9rem;">Defect Rate</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #16a34a; font-weight: 600;">✅ All systems operating at optimal performance levels</p>
+                    `;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

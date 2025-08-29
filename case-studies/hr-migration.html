@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR System Migration - Case Study</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DataStrategy Pro</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="#" class="active">Case Studies</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="case-study">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="case-hero">
+                <div class="case-hero-content">
+                    <span class="case-category">Project 1C • Data Foundation Builder</span>
+                    <h1>Enterprise HR System Migration</h1>
+                    <p class="case-subtitle">Seamlessly migrated 15 years of HR data from legacy systems to modern cloud
+                        platform, ensuring zero data loss and 99.9% accuracy for 2,500 employees.</p>
+
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">2,500</span>
+                            <span class="metric-label">Employee Records</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">99.9%</span>
+                            <span class="metric-label">Data Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">0</span>
+                            <span class="metric-label">Data Loss</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">21 Days</span>
+                            <span class="metric-label">Migration Time</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Executive Summary -->
+            <section class="executive-summary">
+                <h2>Executive Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <h3>Client Profile</h3>
+                        <p>Fortune 500 manufacturing company with 2,500 employees across 12 locations, migrating from
+                            legacy AS/400 system to modern cloud-based HRIS.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Challenge</h3>
+                        <p>15 years of critical HR data trapped in outdated systems, complex data relationships, and
+                            strict compliance requirements for employee data migration.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Solution</h3>
+                        <p>Comprehensive data mapping, validation, and migration strategy with automated quality checks
+                            and rollback procedures for risk-free transition.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Investment</h3>
+                        <p>$3,200 project cost with 21-day timeline, including data validation, testing, and
+                            post-migration support.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Challenge -->
+            <section class="challenge-section">
+                <h2>The Challenge</h2>
+                <div class="challenge-content">
+                    <div class="challenge-text">
+                        <h3>Legacy System Data Prison</h3>
+                        <p>The company faced a critical migration challenge with significant business risks:</p>
+                        <ul>
+                            <li><strong>Legacy Complexity:</strong> 15-year-old AS/400 system with undocumented data
+                                structures and relationships</li>
+                            <li><strong>Data Volume:</strong> 2.3 million records across 47 interconnected tables with
+                                complex hierarchies</li>
+                            <li><strong>Compliance Risk:</strong> GDPR, SOX, and labor law requirements for data
+                                accuracy and audit trails</li>
+                            <li><strong>Business Continuity:</strong> Zero tolerance for downtime during payroll and
+                                benefits processing</li>
+                            <li><strong>Data Quality Issues:</strong> Inconsistent formats, duplicate records, and
+                                orphaned data relationships</li>
+                        </ul>
+                    </div>
+                    <div class="data-sample">
+                        <h4>Legacy Data Challenges</h4>
+                        <div class="code-block">
+                            <pre>Legacy AS/400 Data Issues:
+
+// Inconsistent date formats
+Employee A: HIRE_DATE = "19950315" (YYYYMMDD)
+Employee B: HIRE_DATE = "03/15/95" (MM/DD/YY)
+Employee C: HIRE_DATE = "15-MAR-1995" (DD-MON-YYYY)
+
+// Fragmented employee data
+Table EMPMAST: Basic info (Name, ID, Dept)
+Table EMPSAL: Salary history (scattered across years)
+Table EMPBEN: Benefits (multiple active/inactive records)
+Table EMPADR: Addresses (no clear current/historical flags)
+
+// Data quality issues
+- 347 duplicate employee records
+- 1,200+ orphaned salary records
+- 89 employees with invalid department codes
+- Inconsistent name formatting across systems</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Approach -->
+            <section class="approach-section">
+                <h2>Our Approach</h2>
+                <div class="approach-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>Discovery & Mapping (Days 1-5)</h3>
+                            <p>Reverse-engineered legacy data structures, documented relationships, and created
+                                comprehensive data mapping between old and new systems.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>Data Cleansing & Validation (Days 6-12)</h3>
+                            <p>Implemented automated data quality checks, resolved duplicates and inconsistencies, and
+                                established validation rules for migration accuracy.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>Migration Pipeline Development (Days 13-17)</h3>
+                            <p>Built robust ETL processes with error handling, rollback capabilities, and real-time
+                                monitoring for safe data transfer.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>Testing & Go-Live (Days 18-21)</h3>
+                            <p>Conducted parallel testing, user acceptance validation, and executed seamless cutover
+                                with zero business disruption.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Implementation -->
+            <section class="technical-section">
+                <h2>Technical Implementation</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h3>Data Mapping & Transformation</h3>
+                        <div class="code-block">
+                            <pre># Legacy data extraction and standardization
+import pandas as pd
+from datetime import datetime
+import re
+
+def standardize_employee_data(legacy_df):
+    # Standardize date formats
+    def parse_date(date_str):
+        formats = ['%Y%m%d', '%m/%d/%y', '%d-%b-%Y']
+        for fmt in formats:
+            try:
+                return datetime.strptime(str(date_str), fmt)
+            except:
+                continue
+        return None
+    
+    # Clean and standardize names
+    legacy_df['full_name'] = legacy_df['first_name'].str.title() + ' ' + \
+                            legacy_df['last_name'].str.title()
+    
+    # Standardize employee IDs
+    legacy_df['employee_id'] = legacy_df['emp_id'].apply(
+        lambda x: f"EMP{str(x).zfill(6)}"
+    )
+    
+    return legacy_df
+
+# Data validation pipeline
+def validate_migration_data(source_df, target_df):
+    validation_results = {
+        'record_count_match': len(source_df) == len(target_df),
+        'key_integrity': set(source_df['employee_id']) == set(target_df['employee_id']),
+        'data_completeness': target_df.isnull().sum().sum() == 0
+    }
+    
+    return validation_results</pre>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Migration Pipeline</h3>
+                        <div class="code-block">
+                            <pre># Robust migration with rollback capability
+class HRMigrationPipeline:
+    def __init__(self, source_conn, target_conn):
+        self.source = source_conn
+        self.target = target_conn
+        self.backup_tables = []
+    
+    def create_backup(self, table_name):
+        backup_name = f"{table_name}_backup_{datetime.now().strftime('%Y%m%d')}"
+        self.target.execute(f"CREATE TABLE {backup_name} AS SELECT * FROM {table_name}")
+        self.backup_tables.append(backup_name)
+    
+    def migrate_table(self, source_table, target_table, batch_size=1000):
+        try:
+            # Create backup before migration
+            self.create_backup(target_table)
+            
+            # Extract data in batches
+            total_records = self.source.execute(
+                f"SELECT COUNT(*) FROM {source_table}"
+            ).fetchone()[0]
+            
+            for offset in range(0, total_records, batch_size):
+                batch_data = pd.read_sql(
+                    f"SELECT * FROM {source_table} LIMIT {batch_size} OFFSET {offset}",
+                    self.source
+                )
+                
+                # Transform and validate
+                transformed_data = self.transform_data(batch_data)
+                validation_passed = self.validate_batch(transformed_data)
+                
+                if validation_passed:
+                    transformed_data.to_sql(target_table, self.target, 
+                                          if_exists='append', index=False)
+                else:
+                    raise Exception(f"Validation failed for batch at offset {offset}")
+            
+            return True
+            
+        except Exception as e:
+            self.rollback_migration()
+            raise e</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h3>Technology Stack</h3>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">SQLAlchemy</span>
+                        <span class="tech-badge">AS/400 Connectors</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">Data Validation</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section">
+                <h2>Migration Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Data Accuracy</h3>
+                        <div class="result-chart">
+                            <canvas id="accuracyChart" width="300" height="200"></canvas>
+                        </div>
+                        <p>Achieved 99.9% data accuracy with comprehensive validation and quality checks.</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>Migration Timeline</h3>
+                        <div class="result-chart">
+                            <canvas id="timelineChart" width="300" height="200"></canvas>
+                        </div>
+                        <p>Completed migration 4 days ahead of schedule with zero business disruption.</p>
+                    </div>
+                </div>
+
+                <div class="migration-stats">
+                    <h3>Migration Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">2.3M</span>
+                            <span class="stat-label">Records Migrated</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">47</span>
+                            <span class="stat-label">Tables Processed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">347</span>
+                            <span class="stat-label">Duplicates Resolved</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Compliance Maintained</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="business-impact">
+                    <h3>Business Impact</h3>
+                    <div class="impact-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Benefit Category</th>
+                                    <th>Before Migration</th>
+                                    <th>After Migration</th>
+                                    <th>Improvement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Report Generation Time</td>
+                                    <td>4-6 hours</td>
+                                    <td>15 minutes</td>
+                                    <td>95% faster</td>
+                                </tr>
+                                <tr>
+                                    <td>Data Access Speed</td>
+                                    <td>30-45 seconds</td>
+                                    <td>2-3 seconds</td>
+                                    <td>90% faster</td>
+                                </tr>
+                                <tr>
+                                    <td>System Maintenance Cost</td>
+                                    <td>$45K annually</td>
+                                    <td>$12K annually</td>
+                                    <td>73% reduction</td>
+                                </tr>
+                                <tr>
+                                    <td>Compliance Reporting</td>
+                                    <td>Manual, 2 weeks</td>
+                                    <td>Automated, 1 day</td>
+                                    <td>93% faster</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Client Testimonial -->
+            <section class="testimonial-section">
+                <div class="testimonial">
+                    <blockquote>
+                        "The migration was flawless. We expected weeks of issues and data problems, but everything
+                        worked perfectly from day one. Our HR team can now focus on strategic initiatives instead of
+                        fighting with outdated systems."
+                    </blockquote>
+                    <cite>— Michael Chen, CHRO, Global Manufacturing Corp</cite>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Planning a System Migration?</h2>
+                    <p>Ensure zero data loss and seamless transition with our proven migration methodology.</p>
+                    <div class="cta-buttons">
+                        <a href="../contact.html" class="btn btn-primary">Get Migration Assessment</a>
+                        <a href="../services.html" class="btn btn-secondary">View Our Services</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataStrategy Pro</h3>
+                    <p>Transforming business data into strategic intelligence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html">Data Foundation</a></li>
+                        <li><a href="../services.html">ML Enhancement</a></li>
+                        <li><a href="../services.html">Strategic BI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: ibraheemraouf685@gmail.com</p>
+                    <p>Phone: +92 315 3387878</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DataStrategy Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Data Accuracy Chart
+        const accuracyCtx = document.getElementById('accuracyChart').getContext('2d');
+        new Chart(accuracyCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Accurate Data', 'Data Issues'],
+                datasets: [{
+                    data: [99.9, 0.1],
+                    backgroundColor: ['#10b981', '#ef4444']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Timeline Chart
+        const timelineCtx = document.getElementById('timelineChart').getContext('2d');
+        new Chart(timelineCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3'],
+                datasets: [{
+                    label: 'Planned',
+                    data: [30, 40, 30],
+                    backgroundColor: '#94a3b8'
+                }, {
+                    label: 'Actual',
+                    data: [35, 45, 20],
+                    backgroundColor: '#3b82f6'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        stacked: false
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: 50
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

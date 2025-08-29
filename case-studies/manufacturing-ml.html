@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing ML Optimization - Case Study</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DataStrategy Pro</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="#" class="active">Case Studies</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="case-study">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="case-hero">
+                <div class="case-hero-content">
+                    <span class="case-category">Project 2B • ML Enhancement</span>
+                    <h1>Predictive Manufacturing Optimization</h1>
+                    <p class="case-subtitle">Deployed IoT sensors and ML models to predict equipment failures and
+                        optimize production schedules, reducing downtime by 67% and increasing output by $4.2M annually.
+                    </p>
+
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">67%</span>
+                            <span class="metric-label">Downtime Reduction</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">$4.2M</span>
+                            <span class="metric-label">Output Increase</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">92%</span>
+                            <span class="metric-label">Prediction Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">21 Days</span>
+                            <span class="metric-label">Implementation</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Executive Summary -->
+            <section class="executive-summary">
+                <h2>Executive Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <h3>Client Profile</h3>
+                        <p>Mid-size automotive parts manufacturer with 3 production lines, 150 employees, and $85M
+                            annual revenue facing increasing equipment failures.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Challenge</h3>
+                        <p>Unexpected equipment breakdowns causing 18% production downtime, reactive maintenance costing
+                            $2.1M annually, and inability to meet delivery commitments.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Solution</h3>
+                        <p>IoT sensor deployment, predictive maintenance ML models, production optimization algorithms,
+                            and real-time monitoring dashboards.</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Investment</h3>
+                        <p>$8,500 project cost with 21-day implementation, including sensor integration, model
+                            development, and operator training.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Challenge -->
+            <section class="challenge-section">
+                <h2>The Challenge</h2>
+                <div class="challenge-content">
+                    <div class="challenge-text">
+                        <h3>Reactive Maintenance and Production Inefficiencies</h3>
+                        <p>The manufacturing facility struggled with multiple operational challenges:</p>
+                        <ul>
+                            <li><strong>Unexpected Breakdowns:</strong> 18% production downtime due to unplanned
+                                equipment failures</li>
+                            <li><strong>High Maintenance Costs:</strong> $2.1M annually in emergency repairs and
+                                overtime labor</li>
+                            <li><strong>Quality Issues:</strong> 12% defect rate from aging equipment operating beyond
+                                optimal parameters</li>
+                            <li><strong>Delivery Delays:</strong> 23% of orders shipped late due to production
+                                interruptions</li>
+                            <li><strong>Inefficient Scheduling:</strong> Manual production planning unable to optimize
+                                for equipment health</li>
+                            <li><strong>Limited Visibility:</strong> No real-time insights into equipment performance
+                                and degradation</li>
+                        </ul>
+                    </div>
+                    <div class="data-sample">
+                        <h4>Equipment Performance Data Sample</h4>
+                        <div class="code-block">
+                            <pre>Production Line A - CNC Machine #3
+Date: 2024-01-15
+Operating Hours: 16.5
+Vibration Level: 8.2 mm/s (Normal: <6.0)
+Temperature: 78°C (Normal: <70°C)
+Pressure: 145 PSI (Normal: 120-140)
+Cutting Speed: 1,200 RPM
+Defect Rate: 8.5%
+Output: 847 units (Target: 950)
+
+Maintenance Log:
+- Last Service: 45 days ago
+- Next Scheduled: 15 days
+- Emergency Repairs: 3 in last 30 days
+- Total Downtime: 14.2 hours this month
+
+Predictive Indicators:
+❌ Vibration trending upward (15% increase)
+❌ Temperature spikes during high-load operations
+❌ Pressure fluctuations increasing
+⚠️  Bearing wear estimated at 78% capacity
+⚠️  Cutting tool degradation accelerating</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Approach -->
+            <section class="approach-section">
+                <h2>Our Approach</h2>
+                <div class="approach-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>IoT Sensor Deployment (Days 1-6)</h3>
+                            <p>Installed 45 sensors across 3 production lines monitoring vibration, temperature,
+                                pressure, and power consumption with real-time data collection.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>Data Pipeline & Feature Engineering (Days 7-12)</h3>
+                            <p>Built real-time data ingestion pipeline, created 150+ predictive features, and integrated
+                                historical maintenance records for model training.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>ML Model Development (Days 13-18)</h3>
+                            <p>Developed predictive maintenance models using time-series analysis, anomaly detection,
+                                and failure prediction with 92% accuracy.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>Dashboard & Training (Days 19-21)</h3>
+                            <p>Created real-time monitoring dashboards, automated alert systems, and trained operators
+                                on predictive maintenance workflows.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Implementation -->
+            <section class="technical-section">
+                <h2>Technical Implementation</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h3>IoT Data Processing Pipeline</h3>
+                        <div class="code-block">
+                            <pre># Real-time IoT data processing for predictive maintenance
+import pandas as pd
+import numpy as np
+from scipy import signal
+from sklearn.preprocessing import StandardScaler
+from datetime import datetime, timedelta
+
+class IoTDataProcessor:
+    def __init__(self):
+        self.scaler = StandardScaler()
+        self.baseline_metrics = {}
+        
+    def process_sensor_data(self, sensor_readings):
+        """Process raw sensor data into ML-ready features"""
+        features = {}
+        
+        # Vibration analysis
+        vibration_data = sensor_readings['vibration']
+        features['vibration_rms'] = np.sqrt(np.mean(vibration_data**2))
+        features['vibration_peak'] = np.max(np.abs(vibration_data))
+        features['vibration_kurtosis'] = self.calculate_kurtosis(vibration_data)
+        
+        # Frequency domain analysis
+        frequencies, psd = signal.welch(vibration_data, fs=1000)
+        features['dominant_frequency'] = frequencies[np.argmax(psd)]
+        features['frequency_spread'] = np.std(frequencies[psd > np.max(psd) * 0.1])
+        
+        # Temperature trends
+        temp_data = sensor_readings['temperature']
+        features['temp_mean'] = np.mean(temp_data)
+        features['temp_std'] = np.std(temp_data)
+        features['temp_trend'] = self.calculate_trend(temp_data)
+        features['temp_rate_of_change'] = np.mean(np.diff(temp_data))
+        
+        # Pressure analysis
+        pressure_data = sensor_readings['pressure']
+        features['pressure_mean'] = np.mean(pressure_data)
+        features['pressure_volatility'] = np.std(pressure_data) / np.mean(pressure_data)
+        features['pressure_spikes'] = len(pressure_data[pressure_data > np.percentile(pressure_data, 95)])
+        
+        # Power consumption patterns
+        power_data = sensor_readings['power']
+        features['power_efficiency'] = sensor_readings['output_units'] / np.mean(power_data)
+        features['power_stability'] = 1 - (np.std(power_data) / np.mean(power_data))
+        
+        # Cross-sensor correlations
+        features['temp_vibration_corr'] = np.corrcoef(temp_data, vibration_data)[0,1]
+        features['pressure_power_corr'] = np.corrcoef(pressure_data, power_data)[0,1]
+        
+        return features
+    
+    def calculate_health_score(self, features, equipment_id):
+        """Calculate overall equipment health score (0-100)"""
+        if equipment_id not in self.baseline_metrics:
+            return 85  # Default for new equipment
+            
+        baseline = self.baseline_metrics[equipment_id]
+        health_score = 100
+        
+        # Deduct points for deviations from baseline
+        health_score -= min(20, abs(features['vibration_rms'] - baseline['vibration_rms']) * 10)
+        health_score -= min(15, abs(features['temp_mean'] - baseline['temp_mean']) * 0.5)
+        health_score -= min(15, abs(features['pressure_mean'] - baseline['pressure_mean']) * 0.1)
+        health_score -= min(10, (1 - features['power_efficiency'] / baseline['power_efficiency']) * 50)
+        
+        return max(0, health_score)</pre>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Predictive Maintenance Model</h3>
+                        <div class="code-block">
+                            <pre># LSTM-based predictive maintenance model
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense, Dropout
+from sklearn.ensemble import IsolationForest
+
+class PredictiveMaintenanceModel:
+    def __init__(self, sequence_length=24):
+        self.sequence_length = sequence_length
+        self.failure_model = self.build_failure_prediction_model()
+        self.anomaly_detector = IsolationForest(contamination=0.1, random_state=42)
+        
+    def build_failure_prediction_model(self):
+        """Build LSTM model for failure prediction"""
+        model = Sequential([
+            LSTM(64, return_sequences=True, input_shape=(self.sequence_length, 15)),
+            Dropout(0.2),
+            LSTM(32, return_sequences=False),
+            Dropout(0.2),
+            Dense(16, activation='relu'),
+            Dense(1, activation='sigmoid')  # Probability of failure in next 24 hours
+        ])
+        
+        model.compile(
+            optimizer='adam',
+            loss='binary_crossentropy',
+            metrics=['accuracy', 'precision', 'recall']
+        )
+        
+        return model
+    
+    def predict_failure_probability(self, sensor_sequence):
+        """Predict probability of equipment failure"""
+        # Reshape for LSTM input
+        X = sensor_sequence.reshape(1, self.sequence_length, -1)
+        
+        # Get failure probability
+        failure_prob = self.failure_model.predict(X)[0][0]
+        
+        # Get anomaly score
+        current_features = sensor_sequence[-1].reshape(1, -1)
+        anomaly_score = self.anomaly_detector.decision_function(current_features)[0]
+        
+        # Combine predictions
+        risk_score = (failure_prob * 0.7) + (max(0, -anomaly_score) * 0.3)
+        
+        return {
+            'failure_probability': failure_prob,
+            'anomaly_score': anomaly_score,
+            'risk_score': risk_score,
+            'recommendation': self.get_maintenance_recommendation(risk_score)
+        }
+    
+    def get_maintenance_recommendation(self, risk_score):
+        """Generate maintenance recommendations based on risk score"""
+        if risk_score > 0.8:
+            return {
+                'action': 'IMMEDIATE_SHUTDOWN',
+                'priority': 'CRITICAL',
+                'timeframe': 'Within 2 hours',
+                'description': 'High failure risk detected. Schedule immediate inspection.'
+            }
+        elif risk_score > 0.6:
+            return {
+                'action': 'SCHEDULE_MAINTENANCE',
+                'priority': 'HIGH',
+                'timeframe': 'Within 24 hours',
+                'description': 'Elevated risk. Schedule preventive maintenance.'
+            }
+        elif risk_score > 0.4:
+            return {
+                'action': 'MONITOR_CLOSELY',
+                'priority': 'MEDIUM',
+                'timeframe': 'Within 72 hours',
+                'description': 'Increased monitoring recommended. Check key components.'
+            }
+        else:
+            return {
+                'action': 'NORMAL_OPERATION',
+                'priority': 'LOW',
+                'timeframe': 'Next scheduled maintenance',
+                'description': 'Equipment operating within normal parameters.'
+            }</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h3>Technology Stack</h3>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">TensorFlow</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                        <span class="tech-badge">Apache Kafka</span>
+                        <span class="tech-badge">InfluxDB</span>
+                        <span class="tech-badge">Grafana</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section">
+                <h2>Business Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Downtime Reduction</h3>
+                        <div class="result-chart">
+                            <canvas id="downtimeChart" width="300" height="200"></canvas>
+                        </div>
+                        <p>Reduced unplanned downtime from 18% to 6%, saving 2,100 production hours annually.</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>Prediction Accuracy</h3>
+                        <div class="result-chart">
+                            <canvas id="accuracyChart" width="300" height="200"></canvas>
+                        </div>
+                        <p>Achieved 92% accuracy in predicting equipment failures 24-48 hours in advance.</p>
+                    </div>
+                </div>
+
+                <div class="roi-breakdown">
+                    <h3>Financial Impact Analysis</h3>
+                    <div class="roi-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Impact Category</th>
+                                    <th>Annual Benefit</th>
+                                    <th>Calculation Method</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Reduced Downtime</td>
+                                    <td>$2,800,000</td>
+                                    <td>2,100 hours × $1,333/hour production value</td>
+                                </tr>
+                                <tr>
+                                    <td>Lower Maintenance Costs</td>
+                                    <td>$950,000</td>
+                                    <td>65% reduction in emergency repairs</td>
+                                </tr>
+                                <tr>
+                                    <td>Quality Improvements</td>
+                                    <td>$320,000</td>
+                                    <td>8% defect reduction × $4M annual production</td>
+                                </tr>
+                                <tr>
+                                    <td>Energy Efficiency</td>
+                                    <td>$180,000</td>
+                                    <td>12% power consumption reduction</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Total Annual Benefit</strong></td>
+                                    <td><strong>$4,250,000</strong></td>
+                                    <td><strong>ROI: 49,912%</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="operational-improvements">
+                    <h3>Operational Improvements</h3>
+                    <div class="improvements-grid">
+                        <div class="improvement-item">
+                            <h4>Maintenance Efficiency</h4>
+                            <ul>
+                                <li>Shifted from reactive to predictive maintenance</li>
+                                <li>Reduced maintenance team overtime by 45%</li>
+                                <li>Optimized spare parts inventory (30% reduction)</li>
+                                <li>Improved maintenance scheduling accuracy</li>
+                            </ul>
+                        </div>
+                        <div class="improvement-item">
+                            <h4>Production Optimization</h4>
+                            <ul>
+                                <li>Real-time production line balancing</li>
+                                <li>Automated quality control adjustments</li>
+                                <li>Optimized machine utilization (15% increase)</li>
+                                <li>Reduced setup and changeover times</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Client Testimonial -->
+            <section class="testimonial-section">
+                <div class="testimonial">
+                    <blockquote>
+                        "The predictive maintenance system revolutionized our operations. We went from fighting fires to
+                        preventing them. Our equipment runs smoother, our team is more productive, and our customers are
+                        happier with on-time deliveries."
+                    </blockquote>
+                    <cite>— Michael Chen, Plant Manager, Precision Auto Components</cite>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Optimize Your Manufacturing?</h2>
+                    <p>Deploy IoT sensors and ML models to predict failures and maximize production efficiency.</p>
+                    <div class="cta-buttons">
+                        <a href="../contact.html" class="btn btn-primary">Get IoT Assessment</a>
+                        <a href="../services.html" class="btn btn-secondary">View ML Services</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataStrategy Pro</h3>
+                    <p>Transforming business data into strategic intelligence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html">Data Foundation</a></li>
+                        <li><a href="../services.html">ML Enhancement</a></li>
+                        <li><a href="../services.html">Strategic BI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: ibraheemraouf685@gmail.com</p>
+                    <p>Phone: +92 315 3387878</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DataStrategy Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Downtime Reduction Chart
+        const downtimeCtx = document.getElementById('downtimeChart').getContext('2d');
+        new Chart(downtimeCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Before ML (%)',
+                    data: [19, 17, 18, 20, 18, 19, 17, 18, 19, 18, 17, 18],
+                    backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                    borderColor: '#ef4444',
+                    borderWidth: 1
+                }, {
+                    label: 'After ML (%)',
+                    data: [18, 15, 12, 8, 6, 5, 6, 5, 6, 7, 6, 6],
+                    backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                    borderColor: '#10b981',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 25
+                    }
+                }
+            }
+        });
+
+        // Prediction Accuracy Chart
+        const accuracyCtx = document.getElementById('accuracyChart').getContext('2d');
+        new Chart(accuracyCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Correct Predictions', 'Missed Predictions'],
+                datasets: [{
+                    data: [92, 8],
+                    backgroundColor: ['#10b981', '#ef4444'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
